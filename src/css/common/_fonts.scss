@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('Open-Sans-Regular'),
+       url('../fonts/open-sans-regular.woff2') format('woff2'),
+       url('../fonts/open-sans-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('Open-Sans-SemiBold'),
+       url('../fonts/open-sans-semibold.woff2') format('woff2'),
+       url('../fonts/open-sans-semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('Open-Sans-Bold'),
+       url('../fonts/open-sans-bold.woff2') format('woff2'),
+       url('../fonts/open-sans-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local('Playfair Display Black'), local('Playfair-Display-Black'),
+       url('../fonts/playfair-display-v29-latin_cyrillic-900.woff2') format('woff2'),
+       url('../fonts/playfair-display-v29-latin_cyrillic-900.woff') format('woff');
+}
