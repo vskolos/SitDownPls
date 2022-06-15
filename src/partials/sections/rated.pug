@@ -1,0 +1,12 @@
+section.rated
+  h2.rated__title Высокий рейтинг
+  ul.lst.rated__products
+    each data in [{ img: 'rated-1', name: 'Диван кожаный “R-94”', price: '94 990 руб', rating: '5,0' }, { img: 'rated-2', name: 'Диван апартековый “T-75”', price: '69 990 руб', rating: '4,9' }, { img: 'rated-3', name: 'Диван тканевый “D-31”', price: '28 490 руб', rating: '4,8' }, { img: 'rated-4', name: 'Диван велюровый “Y-68”', price: '22 990 руб', rating: '4,8' }, { img: 'rated-5', name: 'Диван из шинила “W-95”', price: '22 990 руб', rating: '4,8' }, { img: 'rated-6', name: 'Диван флоковый “G-41”', price: '17 990 руб', rating: '4,8' }, { img: 'rated-7', name: 'Диван шиниловый “V-43”', price: '19 990 руб', rating: '4,8' }, { img: 'rated-8', name: 'Диван велюровый “S-99”', price: '19 990 руб', rating: '4,7' }]
+      li.rated__product
+        - var className = 'product__card'
+        - var productImg = data.img
+        - var productName = data.name
+        - var productPrice = data.price
+        - var productRating = data.rating
+        include ../blocks/product-card
+  button.btn.rated__btn Смотреть больше товаров

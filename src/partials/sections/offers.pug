@@ -1,0 +1,22 @@
+section.offers.container
+  h2.offers__title Специальные предложения
+  .offers__slider
+    each data, number in { 1: { title: 'Кресло велюровое “X-24”', price: '15 990 руб', oldPrice: '24 990 руб', discount: '- 9 000' }, 2: { title: 'Диван тканевый “Z-44”', price: '22 990 руб', oldPrice: '32 990 руб', discount: '- 10 000', large: true }, 3: { title: 'Будильник  “Quartz-23”', price: '1 290 руб', oldPrice: '1 890 руб', discount: '- 600' }, 4: { title: 'Мини-скульптура “Oh my deer”', price: '690 руб', oldPrice: '990 руб', discount: '- 300' }, 5: { title: 'Диван вел-флок “Z-85”', price: '22 990 руб', oldPrice: '32 990 руб', discount: '- 10 000', large: true }, 6: { title: 'Термометр + гидрометр “H-18”', price: '1 990 руб', oldPrice: '2 090 руб', discount: '- 700' } }
+      article.card.offers__card
+        picture.card__img
+          if data.large
+            source(srcset=`img/offer-${number}-large.webp, img/offer-${number}-large@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
+            source(srcset=`img/offer-${number}-large.png, img/offer-${number}-large@2x.png 2x` media='(min-width: 1400px)')
+          source(srcset=`img/offer-${number}.webp, img/offer-${number}@2x.webp 2x` type='image/webp')
+          source(srcset=`img/offer-${number}.png, img/offer-${number}@2x.png 2x`)
+          img(src=`img/offer-${number}.png` alt=`${data.title}`)
+        if data.large
+          picture.card__schema
+            source(srcset=`img/offer-${number}-scheme.webp, img/offer-${number}-scheme@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
+            source(srcset=`img/offer-${number}-scheme.png, img/offer-${number}-scheme@2x.png 2x` media='(min-width: 1400px)')
+            img(src=`img/offer-${number}-scheme.png` alt=`${data.title} – Схема`)
+        h4.card__title= data.title
+        span.card__price= data.price
+        span.card__old-price= data.oldPrice
+        span.card__discount= data.discount
+        button.btn.card__btn Купить

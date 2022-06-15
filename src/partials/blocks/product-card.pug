@@ -1,0 +1,13 @@
+article(class=`card ${className ? className : ''}`)
+  picture.card__img
+    source(srcset=`img/${productImg}-large.webp, img/${productImg}-large@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
+    source(srcset=`img/${productImg}-large.png, img/${productImg}-large@2x.png 2x` media='(min-width: 768px)')
+    source(srcset=`img/${productImg}.webp, img/${productImg}@2x.webp 2x` type='image/webp')
+    source(srcset=`img/${productImg}.png, img/${productImg}@2x.png 2x`)
+    img(src=`img/${productImg}-large.png` alt=`${productName}`)
+  h4.card__title= productName
+  span.card__price= productPrice
+  .rating.card__rating
+    img(src='star.svg')
+    span.rating__text= productRating
+  button.btn.card__btn Купить

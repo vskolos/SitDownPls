@@ -1,0 +1,11 @@
+doctype html
+html
+  - var title = 'Каталог | Интернет-магазин SitDownPls'
+  - var style = 'catalog.css'
+  - var script = 'script.js'
+  include partials/head
+  body
+    - var logoLink = '/'
+    include partials/sections/header
+    include partials/sections/hero
+    include partials/sections/offers

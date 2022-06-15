@@ -1,0 +1,10 @@
+section.categories.container
+  h2.categories__title Топ категории
+  ul.lst.categories__list
+    each data in [{ subcategories: ['Прямые', 'Угловые', 'Модульные'], name: 'Диваны', img: 'couches' }, { subcategories: ['Односпальные', 'Двуспальные'], name: 'Кровати', img: 'beds' }, { subcategories: ['Мягкие', 'Кресла-кровати'], name: 'Кресла', img: 'armchairs' }, { subcategories: ['Тумбы', 'Комоды'], name: 'Тумбы и комоды', img: 'dressers' }, { subcategories: ['Деревянные', 'Металлокаркас'], name: 'Стулья', img: 'chairs' }]
+      li.category.categories__item
+        - var className = 'category__card'
+        - var categorySubcategories = data.subcategories
+        - var categoryName = data.name
+        - var categoryImg = data.img
+        include ../blocks/category-card

@@ -18,6 +18,7 @@ import babel from 'gulp-babel'
 import sourcemaps from 'gulp-sourcemaps'
 import realFavicon from 'gulp-real-favicon'
 import fs from 'fs'
+import pug from 'gulp-pug'
 
 const isProduction = argv.includes('--prod')
 const FAVICON_DATA_FILE = 'src/faviconData.json'
@@ -170,14 +171,15 @@ function favicons(done) {
 }
 
 function html() {
-  return src('src/*.html')
-    .pipe(gulpif(isProduction, htmlMin({ collapseWhitespace: true })))
-    .pipe(injectSVG({ base: 'src/' }))
+  return src('src/*.pug')
+    .pipe(pug())
+    .pipe(injectSVG({ base: 'src/img/inline/' }))
     .pipe(
       realFavicon.injectFaviconMarkups(
         JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code
       )
     )
+    .pipe(gulpif(isProduction, htmlMin({ collapseWhitespace: true })))
     .pipe(dest('dist'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
@@ -193,7 +195,7 @@ function watchFiles() {
   )
 }
 
-watch(['src/*.html', 'src/img/inline/*.svg'], html)
+watch(['src/**/*.pug', 'src/img/inline/*.svg'], html)
 watch('src/fonts/**', fonts)
 watch('src/vendor/**', vendor)
 watch('src/js/**/*.js', js)

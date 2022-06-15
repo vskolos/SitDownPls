@@ -1,0 +1,9 @@
+section.useful.container
+  h2.useful__title Полезное
+  ul.lst.useful__slider
+    each data in [{ img: 'article-1', title: 'И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?' }, { img: 'article-2', title: 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?' }, { img: 'article-3', title: 'Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?' }, { img: 'article-4', title: 'Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?' }, { img: 'article-5', title: 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?' }]
+      li.slide.useful__slide
+        - var className = 'slide__article'
+        - var articleTitle = data.title
+        - var articleImg = data.img
+        include ../blocks/article-card

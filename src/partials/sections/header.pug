@@ -1,0 +1,57 @@
+header.header
+  .row-0.header__row-0.container
+    a.lnk.row-0__link(href=`${logoLink}`)
+      img.row-0__logo(src='logo.svg')
+  .row-1.header__row-1.container
+    .location.row-1__location
+      p.location__text Ваш регион
+      button.btn.location__btn Москва
+    .row-1__phone +7 (495) 885-45-47
+    nav.menu.row-1__menu
+      ul.lst.menu__list
+        each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
+          li.menu__item
+            a.lnk.menu__link(href='#')= text
+  .row-2.header__row-2.container
+    nav.menu.row-2__menu
+      ul.lst.menu__list
+        each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
+          li.menu__item
+            a.lnk.menu__link(href='#')= text
+    .btns.row-2__btns
+      button.btn.user.btns__user
+        img.user__icon(src='user.svg')
+      button.btn.cart.btns__cart
+        span.cart__count 0
+        img.cart__icon(src='cart.svg')
+  .row-3.header__row-3.container
+    button.btn.burger.row-3__burger
+      img.burger__icon(src='burger.svg')
+    a.lnk.row-3__link(href=`${logoLink}`)
+      img.row-3__logo(src='logo.svg')
+    nav.menu.row-3__menu
+      ul.lst.menu__list
+        each text in ['Каталог', 'Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
+          li.menu__item
+            a.lnk.menu__link(href='#')= text
+    .btns.row-3__btns
+      button.btn.user.btns__user
+        img.user__icon(src='user.svg')
+      button.btn.cart.btns__cart
+        span.cart__count 0
+        img.cart__icon(src='cart.svg')
+  .row-4.header__row-4.container
+    label.search.row-4__search
+      img.search__icon
+      input.search__input(placeholder='Я хочу купить...')
+      button.btn.submit.search__submit
+        img.submit__icon(src='arrow-right-circle-large.svg')
+    select.categories.row-4__categories
+      each category in ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
+        option.categories__option= category
+    .btns.row-4__btns
+      button.btn.user.btns__user
+        img.user__icon(src='user.svg')
+      button.btn.cart.btns__cart
+        span.cart__count 0
+        img.cart__icon(src='cart.svg')

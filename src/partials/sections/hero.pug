@@ -1,0 +1,17 @@
+section.hero
+  h1.visually-hidden Интернет-магазин SitDownPls
+  ul.lst.hero__slider
+    each data, number in { 1: { title: 'Скидка 15% на первую покупку', button: 'Получить' }, 2: { title: '1000+ аксессуаров для дома', button: 'Подробнее' }, 3: { title: 'Коллекция стильного и яркого текстиля', button: 'Подробнее', white: true } }
+      li.slide.hero__slide
+        picture.slide__img
+          source(srcset=`img/slide-${number}-1400px.webp, img/slide-${number}-1400px@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
+          source(srcset=`img/slide-${number}-1400px.jpg, img/slide-${number}-1400px@2x.jpg 2x` media='(min-width: 1400px)')
+          source(srcset=`img/slide-${number}-1024px.webp, img/slide-${number}-1024px@2x.webp 2x` media='(min-width: 1024px)' type='image/webp')
+          source(srcset=`img/slide-${number}-1024px.jpg, img/slide-${number}-1024px@2x.jpg 2x` media='(min-width: 1024px)')
+          source(srcset=`img/slide-${number}-768px.webp, img/slide-${number}-768px@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
+          source(srcset=`img/slide-${number}-768px.jpg, img/slide-${number}-768px@2x.jpg 2x` media='(min-width: 768px)')
+          source(srcset=`img/slide-${number}.webp, img/slide-${number}@2x.webp 2x` type='image/webp')
+          source(srcset=`img/slide-${number}.jpg, img/slide-${number}@2x.jpg 2x`)
+          img(src=`img/slide-${number}-1400px.jpg` alt=`Слайд ${number}`)
+        p(class=`slide__title${data.white ? ' slide__title--white' : ''}`)= data.title
+        button.btn.slide__btn= data.button

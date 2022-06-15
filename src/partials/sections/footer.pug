@@ -1,0 +1,17 @@
+footer.footer
+  .footer__content.container
+    img.footer__logo(src='logo.svg')
+    ul.lst.footer__socials
+      each icon of ['fb.svg', 'vk.svg', 'instagram.svg']
+        li.social.footer__social
+          a.lnk.social__link(href='#')
+            img.social__icon(src=`${icon}`)
+    nav.menu.footer__menu
+      each section in [{ title: 'О нас', links: ['О компании', 'Блог'] }, { title: 'Услуги', links: ['Доставка', 'Рассрочка и кредит', 'Сборка и установка'] }, { title: 'Связь с нами', links: ['Обратная связь', 'Контакты'] },{ title: 'Сотрудничество', links: ['Поставщикам', 'Оптовикам', 'Карьера'] }]
+        .section.menu__section
+          .section__title= section.title
+          ul.lst.menu.section__menu
+            each link in section.links
+              li.section.menu__item
+                a.menu__link(href='#')= link
+  .footer__copyright.container SDP®   2011-2021
