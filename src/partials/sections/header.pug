@@ -4,9 +4,9 @@ header.header
       img.row-0__logo(src='logo.svg')
   .row-1.header__row-1.container
     .location.row-1__location
-      p.location__text Ваш регион
-      button.btn.location__btn Москва
-    .row-1__phone +7 (495) 885-45-47
+      span.location__text Ваш регион:&nbsp;
+      button.btn.location__btn Москва #[img.location__icon(src='arrow-down.svg')]
+    a.phone.row-1__phone #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
     nav.menu.row-1__menu
       ul.lst.menu__list
         each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
@@ -41,13 +41,13 @@ header.header
         span.cart__count 0
         img.cart__icon(src='cart.svg')
   .row-4.header__row-4.container
-    label.search.row-4__search
-      img.search__icon
+    .search.row-4__search
+      img.search__icon(src='search.svg')
       input.search__input(placeholder='Я хочу купить...')
       button.btn.submit.search__submit
         img.submit__icon(src='arrow-right-circle-large.svg')
     select.categories.row-4__categories
-      each category in ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
+      each category in ['Категория', 'Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
         option.categories__option= category
     .btns.row-4__btns
       button.btn.user.btns__user
