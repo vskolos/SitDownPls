@@ -1,4 +1,7 @@
 article(class=`card ${className ? className : ''}`)
+  .rating.card__rating
+    img.rating__star(src='star.svg')
+    span.rating__text= productRating
   picture.card__img
     source(srcset=`img/${productImg}-large.webp, img/${productImg}-large@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
     source(srcset=`img/${productImg}-large.png, img/${productImg}-large@2x.png 2x` media='(min-width: 768px)')
@@ -7,7 +10,4 @@ article(class=`card ${className ? className : ''}`)
     img(src=`img/${productImg}-large.png` alt=`${productName}`)
   h4.card__title= productName
   span.card__price= productPrice
-  .rating.card__rating
-    img(src='star.svg')
-    span.rating__text= productRating
   button.btn.card__btn Купить
