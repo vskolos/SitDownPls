@@ -30,7 +30,7 @@ const offersSlider = new Swiper('.swiper.offers__swiper', {
 })
 
 // Show more rated products
-const ratedProductsPerPage = window.innerWidth >= 1400 ? 8 : 6
+let ratedProductsPerPage = window.innerWidth >= 1400 ? 8 : 6
 let ratedProductsVisible = 0
 const ratedProductsList = document.querySelector('.rated__products')
 const ratedProducts = document.querySelectorAll('.rated__product')
@@ -56,6 +56,7 @@ showRatedProducts()
 showMoreRatedProductsBtn.addEventListener('click', showRatedProducts)
 
 window.addEventListener('resize', () => {
+  ratedProductsPerPage = window.innerWidth >= 1400 ? 8 : 6
   ratedProductsVisible = 0
   document.querySelector('.rated').append(showMoreRatedProductsBtn)
   showRatedProducts()
