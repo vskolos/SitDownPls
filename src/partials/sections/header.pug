@@ -3,10 +3,11 @@ header.header
     a.lnk.row-0__link(href=`${logoLink}`)
       img.row-0__logo(src='logo.svg')
   .row-1.header__row-1.container
-    .location.row-1__location
-      span.location__text Ваш регион:&nbsp;
-      button.btn.location__btn Москва #[img.location__icon(src='arrow-down.svg')]
-    a.phone.row-1__phone #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
+    .row-1__info
+      .location.row-1__location
+        span.location__text Ваш регион:&nbsp;
+        button.btn.location__btn Москва #[img.location__icon(src='arrow-down.svg')]
+      a.phone.row-1__phone #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
     nav.menu.row-1__menu
       ul.lst.menu__list
         each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
