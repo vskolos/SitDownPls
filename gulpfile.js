@@ -88,12 +88,11 @@ function scss() {
 }
 
 function js() {
-  return src('src/js/**/*.js')
+  return src('src/js/*.js')
     .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(concat('script.js'))
     .pipe(
       babel({
-        presets: ['@babel/env'],
+        presets: ['@babel/preset-env'],
       })
     )
     .pipe(gulpif(!isProduction, sourcemaps.write()))
