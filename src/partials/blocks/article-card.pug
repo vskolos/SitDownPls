@@ -1,9 +1,11 @@
 article(class=`article ${className ? className : ''}`)
-  picture.article__img
-    source(srcset=`img/${articleImg}-large.webp, img/${articleImg}-large@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
-    source(srcset=`img/${articleImg}-large.jpg, img/${articleImg}-large@2x.jpg 2x` media='(min-width: 1400px)')
-    source(srcset=`img/${articleImg}.webp, img/${articleImg}@2x.webp 2x` type='image/webp')
-    source(srcset=`img/${articleImg}.jpg, img/${articleImg}@2x.jpg 2x`)
-    img(src=`img/${articleImg}-large.jpg` alt=`${articleTitle}`)
-  h5.article__title= articleTitle
-  button.btn.article__btn Читать
+  .article__img
+    picture.article__picture
+      source(srcset=`img/${articleImg}-large.webp, img/${articleImg}-large@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
+      source(srcset=`img/${articleImg}-large.jpg, img/${articleImg}-large@2x.jpg 2x` media='(min-width: 1400px)')
+      source(srcset=`img/${articleImg}.webp, img/${articleImg}@2x.webp 2x` type='image/webp')
+      source(srcset=`img/${articleImg}.jpg, img/${articleImg}@2x.jpg 2x`)
+      img(src=`img/${articleImg}-large.jpg` alt=`${articleTitle}`)
+  .article__data
+    h5.article__title= articleTitle
+    button.btn.article__btn Читать
