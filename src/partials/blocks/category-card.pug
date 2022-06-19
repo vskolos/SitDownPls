@@ -1,7 +1,8 @@
 article(class=`card ${className ? className : ''}`)
   ul.lst.card__subcategories
     each text in categorySubcategories
-      li.card__subcategory= text
+      li.card__subcategory
+        a.lnk.card__subcategory-link(href='catalog.html')= text
   h3.card__title= categoryName
     a.lnk.card__title-link(href='catalog.html')
       img.card__title-icon(src='arrow-right-circle.svg')

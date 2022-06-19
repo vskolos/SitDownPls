@@ -1,6 +1,7 @@
 footer.footer
   .footer__content.container
-    img.footer__logo(src='logo.svg')
+    a.footer__link(href=`${logoLink}`)
+      img.footer__logo(src='logo.svg')
     ul.lst.footer__socials
       each icon of ['fb.svg', 'vk.svg', 'instagram.svg']
         li.social.footer__social
