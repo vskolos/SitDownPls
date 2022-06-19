@@ -18,6 +18,10 @@
     @media (min-width: 1024px) {
       grid-column: 1 / 9;
     }
+
+    @media (min-width: 1400px) {
+      grid-column: 1 / 12;
+    }
   }
 
   &__slider {
