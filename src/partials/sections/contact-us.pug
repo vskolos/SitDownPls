@@ -1,13 +1,23 @@
 section.contact-us.container
-  h2.contact-us__title Мы всегда вам рады!
-  span.contact-us__text Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
-  img.contact-us__tooltip(src='tooltip.svg')
-  form.form.contact-us__form
-    input.form__input(type='text' placeholder='Как вас зовут?')
-    input.form__input(type='tel' placeholder='Ваш телефон')
-    input.form__input(type='email' placeholder='Ваш e-mail')
-    button.btn.form__btn(type='submit') Отправить
-    label.checkbox.form__checkbox
-      input.checkbox__input(type='checkbox')
-      img.checkbox__icon(src='checkbox.svg')
-      span.checkbox__text Принимаю #[a.lnk.checkbox__link(href='#') пользовательское соглашение]
+  .contact-us__data
+    h2.contact-us__title Мы всегда вам рады!
+    span.contact-us__text Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
+    img.contact-us__tooltip(src='tooltip.svg')
+    form.form.contact-us__form
+      input.form__input(type='text' placeholder='Как вас зовут?')
+      input.form__input(type='tel' placeholder='Ваш телефон')
+      input.form__input(type='email' placeholder='Ваш e-mail')
+      button.btn.form__btn(type='submit') Отправить
+      label.checkbox.form__checkbox
+        input.checkbox__input(type='checkbox')
+        img.checkbox__icon(src='checkbox.svg')
+        span.checkbox__text Принимаю #[a.lnk.checkbox__link(href='#') пользовательское соглашение]
+  .contact-us__img
+    picture.card__picture
+      source(srcset=`img/contact-us-1400px.webp, img/contact-us-1400px@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
+      source(srcset=`img/contact-us-1400px.png, img/contact-us-1400px@2x.png 2x` media='(min-width: 1400px)')
+      source(srcset=`img/contact-us-1024px.webp, img/contact-us-1024px@2x.webp 2x` media='(min-width: 1024px)' type='image/webp')
+      source(srcset=`img/contact-us-1024px.png, img/contact-us-1024px@2x.png 2x` media='(min-width: 1024px)')
+      source(srcset=`img/contact-us-768px.webp, img/contact-us-768px@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
+      source(srcset=`img/contact-us-768px.png, img/contact-us-768px@2x.png 2x` media='(min-width: 768px)')
+      img(src=`img/contact-us-1400px.png` alt=`${categoryName}`)
