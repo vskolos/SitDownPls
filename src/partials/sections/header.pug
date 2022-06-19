@@ -5,8 +5,10 @@ header.header
   .row-1.header__row-1.container
     .row-1__info
       .location.row-1__location
-        span.location__text Ваш регион:&nbsp;
-        button.btn.location__btn Москва #[img.location__icon(src='arrow-down.svg')]
+        span.location__text Ваш регион:
+        select.location__select
+          each city in ['Москва', 'Казань', 'Уфа', 'Пермь']
+            option.location__option= city
       a.lnk.phone.row-1__phone(href='#') #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
     nav.menu.row-1__menu
       ul.lst.menu__list

@@ -21,7 +21,7 @@
   }
 
   .row-1 {
-    padding-block: 18px 16px;
+    padding-block: 17px 16px;
 
     @media (min-width: 768px) {
       padding-block: 17px 18.5px;
@@ -37,7 +37,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      row-gap: 18px;
+      row-gap: 15px;
 
       @media (min-width: 1024px) {
         grid-column: 1 / 10;
@@ -52,13 +52,19 @@
       .location {
         display: flex;
         align-items: center;
+        gap: 1px;
 
         &__text {
           font-size: 16px;
           line-height: 1.2;
         }
 
-        &__btn {
+        &__select {
+          padding: 0;
+          border: none;
+          background: none;
+          font-size: 16px;
+          line-height: 1.2;
           color: var(--clr-primary);
         }
       }
