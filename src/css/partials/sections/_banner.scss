@@ -68,6 +68,7 @@
     padding: 22px;
     position: absolute;
     inset: auto 12px -91px;
+    width: calc(100% - 24px);
     font-weight: 700;
     font-size: 16px;
     line-height: 1;
@@ -82,6 +83,7 @@
       padding-inline: 31.5px;
       position: initial;
       align-self: flex-start;
+      width: auto;
     }
 
     &:hover {

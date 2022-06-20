@@ -117,11 +117,15 @@ function showRatedProducts() {
 showRatedProducts()
 showMoreRatedProductsBtn.addEventListener('click', showRatedProducts)
 
+const currentWindowWidth = window.innerWidth
 window.addEventListener('resize', () => {
-  ratedProductsPerPage = window.innerWidth >= 1400 ? 8 : 6
-  ratedProductsVisible = 0
-  document.querySelector('.rated').append(showMoreRatedProductsBtn)
-  showRatedProducts()
+  if (window.innerWidth !== currentWindowWidth) {
+    currentWindowWidth = window.innerWidth
+    ratedProductsPerPage = window.innerWidth >= 1400 ? 8 : 6
+    ratedProductsVisible = 0
+    document.querySelector('.rated').append(showMoreRatedProductsBtn)
+    showRatedProducts()
+  }
 })
 
 // Form validation
