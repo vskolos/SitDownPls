@@ -24,11 +24,15 @@
     padding-block: 17px 16px;
 
     @media (min-width: 768px) {
-      padding-block: 17px 18.5px;
+      padding-block: 17px 16.5px;
+    }
+
+    @media (min-width: 1024px) {
+      padding-block: 17px;
     }
 
     @media (min-width: 1400px) {
-      padding-block: 14px 13px;
+      padding-block: 14px 12px;
       background-color: var(--clr-gray-light);
     }
 

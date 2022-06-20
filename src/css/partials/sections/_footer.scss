@@ -37,7 +37,7 @@
     }
   }
 
-  &__logo {
+  &__link {
     grid-column: 1 / 7;
     justify-self: center;
 
@@ -51,6 +51,10 @@
       grid-row: 1 / 2;
       align-self: top;
     }
+  }
+
+  &__logo {
+    display: block;
   }
 
   &__socials {
