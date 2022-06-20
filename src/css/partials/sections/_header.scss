@@ -738,7 +738,6 @@
           background-color: var(--clr-pink-light);
           border-color: var(--clr-primary);
           outline: none;
-          // z-index: 15;
         }
 
         @media (min-width: 768px) {
@@ -750,7 +749,6 @@
       &__submit {
         position: absolute;
         right: 32px;
-        // z-index: 15;
 
         @media (min-width: 768px) {
           right: 34px;
