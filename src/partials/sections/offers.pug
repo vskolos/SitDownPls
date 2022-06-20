@@ -1,6 +1,6 @@
 section.offers.container
   h2.offers__title Специальные предложения
-  .offers__slider.swiper.offers__swiper
+  .offers__slider.swiper.js-offers-swiper
     .swiper-wrapper
       each data, number in { 1: { title: 'Кресло велюровое “X-24”', price: '15 990 руб', oldPrice: '24 990 руб', discount: '- 9 000' }, 2: { title: 'Диван тканевый “Z-44”', price: '22 990 руб', oldPrice: '32 990 руб', discount: '- 10 000', large: true }, 3: { title: 'Будильник  “Quartz-23”', price: '1 290 руб', oldPrice: '1 890 руб', discount: '- 600' }, 4: { title: 'Мини-скульптура “Oh my deer”', price: '690 руб', oldPrice: '990 руб', discount: '- 300' }, 5: { title: 'Диван вел-флок “Z-85”', price: '22 990 руб', oldPrice: '32 990 руб', discount: '- 10 000', large: true }, 6: { title: 'Термометр + гидрометр “H-18”', price: '1 990 руб', oldPrice: '2 090 руб', discount: '- 700' } }
         article(class=`card offers__card swiper-slide${data.large ? ' card--large' : ''}`)
