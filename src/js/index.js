@@ -1,11 +1,13 @@
 // Selects
 const locationSelect = new Choices('.js-location-choices', {
+  allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
   itemSelectText: '',
 })
 
 const categorySelect = new Choices('.js-categories-choices', {
+  allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
   itemSelectText: '',
@@ -121,6 +123,45 @@ window.addEventListener('resize', () => {
   document.querySelector('.rated').append(showMoreRatedProductsBtn)
   showRatedProducts()
 })
+
+// Form validation
+const contactUsForm = document.querySelector('.js-contact-us-form')
+contactUsForm.addEventListener('submit', (e) => e.preventDefault())
+
+const validation = new JustValidate(contactUsForm, {
+  errorLabelCssClass: 'form__label--error',
+  errorFieldCssClass: 'form__input--invalid',
+  successFieldCssClass: 'form__input--valid',
+  errorLabelStyle: {},
+})
+validation
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите ваше имя',
+    },
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Имя должно содержать по крайней мере 3 символа',
+    },
+  ])
+  .addField('#tel', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите ваш телефон',
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите ваш e-mail',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Введите корректный e-mail',
+    },
+  ])
 
 // aria-hidden for all inline svg images
 const svgs = document.querySelectorAll('svg')

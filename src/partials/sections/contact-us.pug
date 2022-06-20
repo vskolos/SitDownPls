@@ -5,10 +5,13 @@ section.contact-us.container
     .tooltip.contact-us__tooltip(tabindex='0' aria-label='Подсказка')
       img.tooltip__icon(src='tooltip.svg')
       p.tooltip__text Реплицированные с зарубежных источников, исследования формируют глобальную сеть.
-    form.form.contact-us__form
-      input.form__input(type='text' placeholder='Как вас зовут?' aria-label='Введите ваше имя')
-      input.form__input(type='tel' placeholder='Ваш телефон' aria-label='Введите ваш телефон')
-      input.form__input(type='email' placeholder='Ваш e-mail' aria-label='Введите ваш e-mail')
+    form.form.contact-us__form.js-contact-us-form
+      label.form__label
+        input#name.form__input(type='text' placeholder='Как вас зовут?' aria-label='Введите ваше имя')
+      label.form__label
+        input#tel.form__input(type='tel' placeholder='Ваш телефон' aria-label='Введите ваш телефон')
+      label.form__label
+        input#email.form__input(type='email' placeholder='Ваш e-mail' aria-label='Введите ваш e-mail')
       button.btn.form__btn(type='submit') Отправить
       label.checkbox.form__checkbox
         input.checkbox__input(type='checkbox')

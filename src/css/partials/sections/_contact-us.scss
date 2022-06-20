@@ -110,8 +110,23 @@
     flex-direction: column;
     gap: 30px;
 
+    &__label {
+      position: relative;
+      width: 100%;
+
+      &--error {
+        position: absolute;
+        left: 18px;
+        bottom: calc(100%);
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--clr-red-input);
+      }
+    }
+
     &__input {
       padding: 6px 17px;
+      width: 100%;
       font-size: 16px;
       line-height: 40px;
       background-color: var(--clr-gray-light);
@@ -137,6 +152,14 @@
         background-color: var(--clr-pink-light);
         border-color: var(--clr-primary);
         outline: none;
+      }
+
+      &--invalid.form__input {
+        border-color: var(--clr-red-input);
+      }
+
+      &--valid.form__input {
+        border-color: var(--clr-green-input);
       }
     }
 
