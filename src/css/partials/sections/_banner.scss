@@ -74,11 +74,36 @@
     color: var(--clr-white);
     background-color: var(--clr-primary);
     border-radius: 10px;
+    transition: color .1s ease-in-out,
+      background-color .1s ease-in-out,
+      border-color .1s ease-in-out;
 
     @media (min-width: 768px) {
       padding-inline: 31.5px;
       position: initial;
       align-self: flex-start;
+    }
+
+    &:hover {
+      background-color: var(--clr-primary-light);
+      border-color: var(--clr-primary-light);
+    }
+
+    &:focus-visible {
+      background-color: var(--clr-primary-light);
+      border-color: var(--clr-primary-shade);
+      outline: none;
+    }
+
+    &:active {
+      background-color: var(--clr-primary-shade);
+      border-color: var(--clr-primary-shade);
+    }
+
+    &:disabled {
+      color: var(--clr-gray);
+      background-color: var(--clr-gray-middle);
+      border-color: var(--clr-gray-middle);
     }
   }
 }
