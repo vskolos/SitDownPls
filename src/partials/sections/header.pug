@@ -10,7 +10,7 @@ header.header
           each city in ['Москва', 'Казань', 'Уфа', 'Пермь']
             option.location__option= city
         img.location__arrow(src='arrow-down.svg')
-      a.lnk.phone.row-1__phone(href='#') #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
+      a.lnk.phone.row-1__phone(href='tel:+74958854547') #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
     nav.menu.row-1__menu
       ul.lst.menu__list
         each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
@@ -46,8 +46,8 @@ header.header
         img.cart__icon(src='cart.svg')
   .row-4.header__row-4.container
     .search.row-4__search
-      img.search__icon(src='search.svg')
       input.search__input(placeholder='Я хочу купить...')
+      img.search__icon(src='search.svg')
       button.btn.submit.search__submit
         img.submit__icon(src='arrow-right-circle-large.svg')
     .categories.row-4__categories
