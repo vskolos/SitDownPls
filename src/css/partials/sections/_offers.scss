@@ -80,6 +80,59 @@
         content: '';
       }
     }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      &:hover > svg > path {
+        stroke: var(--clr-white);
+      }
+
+      &:hover > svg > circle {
+        fill: var(--clr-primary);
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:focus-visible > svg > path {
+        stroke: var(--clr-white);
+      }
+
+      &:focus-visible > svg > circle {
+        fill: var(--clr-primary-light);
+      }
+
+      &:active > svg > path {
+        stroke: var(--clr-white)
+      }
+
+      &:active > svg > circle {
+        fill: var(--clr-primary-shade);
+        stroke: var(--clr-primary-shade);
+      }
+
+      & > svg {
+        display: block;
+
+        & > path,
+        & > circle {
+          transition: stroke .1s ease-in-out,
+            fill .1s ease-in-out;
+        }
+      }
+    }
+
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled {
+      opacity: 1;
+
+      & > svg > path,
+      & > svg > circle {
+        stroke: var(--clr-gray);
+        fill: none;
+      }
+    }
   }
 
   .card {
@@ -204,6 +257,34 @@
       color: var(--clr-primary);
       border: 2px solid var(--clr-primary);
       border-radius: 10px;
+      transition: color .1s ease-in-out,
+        background-color .1s ease-in-out,
+        border-color .1s ease-in-out;
+
+      &:hover {
+        color: var(--clr-white);
+        background-color: var(--clr-primary);
+        border-color: var(--clr-primary);
+      }
+
+      &:focus-visible {
+        color: var(--clr-white);
+        background-color: var(--clr-primary-light);
+        border-color: var(--clr-primary);
+        outline: none;
+      }
+
+      &:active {
+        color: var(--clr-white);
+        background-color: var(--clr-primary-shade);
+        border-color: var(--clr-primary-shade);
+      }
+
+      &:disabled {
+        color: var(--clr-gray);
+        background-color: var(--clr-gray-middle);
+        border-color: var(--clr-gray-middle);
+      }
     }
 
   }
