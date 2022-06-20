@@ -1,10 +1,10 @@
 article(class=`card ${className ? className : ''}`)
-  ul.lst.card__subcategories
+  ul.lst.card__subcategories(aria-label=`Подкатегории раздела ${categoryName}`)
     each text in categorySubcategories
       li.card__subcategory
         a.lnk.card__subcategory-link(href='catalog.html')= text
   h3.card__title= categoryName
-    a.lnk.card__title-link(href='catalog.html')
+    a.lnk.card__title-link(href='catalog.html' aria-label='В каталог')
       img.card__title-icon(src='arrow-right-circle.svg')
   .card__img
     picture.card__picture
@@ -16,7 +16,7 @@ article(class=`card ${className ? className : ''}`)
       source(srcset=`img/category-${categoryImg}-768px.png, img/category-${categoryImg}-768px@2x.png 2x` media='(min-width: 768px)')
       source(srcset=`img/category-${categoryImg}.webp, img/category-${categoryImg}@2x.webp 2x` type='image/webp')
       source(srcset=`img/category-${categoryImg}.png, img/category-${categoryImg}@2x.png 2x`)
-      img(src=`img/category-${categoryImg}-1400px.png` alt=`${categoryName}`)
+      img(src=`img/category-${categoryImg}-1400px.png` alt='')
   a.lnk.card__link(href='catalog.html')
     span.card__link-text В каталог
     img.card__link-icon(src='arrow-right-circle.svg')

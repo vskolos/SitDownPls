@@ -19,12 +19,21 @@ const heroSlider = new Swiper('.swiper.js-hero-swiper', {
     el: '.swiper-pagination',
     clickable: true,
   },
+  a11y: {
+    paginationBulletMessage: 'Перейти к слайду {{index}}',
+    slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
+  },
 })
 
 const offersSlider = new Swiper('.swiper.js-offers-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  a11y: {
+    slideLabelMessage: 'Предложение {{index}} из {{slidesLength}}',
+    prevSlideMessage: 'Предыдущее предложение',
+    nextSlideMessage: 'Следующее предложение',
   },
   breakpoints: {
     320: {
@@ -52,6 +61,11 @@ const usefulSlider = new Swiper('.swiper.js-useful-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  a11y: {
+    slideLabelMessage: 'Статья {{index}} из {{slidesLength}}',
+    prevSlideMessage: 'Предыдущая статья',
+    nextSlideMessage: 'Следующая статья',
   },
   breakpoints: {
     320: {
@@ -107,3 +121,7 @@ window.addEventListener('resize', () => {
   document.querySelector('.rated').append(showMoreRatedProductsBtn)
   showRatedProducts()
 })
+
+// aria-hidden for all inline svg images
+const svgs = document.querySelectorAll('svg')
+svgs.forEach(svg => svg.ariaHidden = true)

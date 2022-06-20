@@ -5,7 +5,7 @@ article(class=`article ${className ? className : ''}`)
       source(srcset=`img/${articleImg}-large.jpg, img/${articleImg}-large@2x.jpg 2x` media='(min-width: 1400px)')
       source(srcset=`img/${articleImg}.webp, img/${articleImg}@2x.webp 2x` type='image/webp')
       source(srcset=`img/${articleImg}.jpg, img/${articleImg}@2x.jpg 2x`)
-      img(src=`img/${articleImg}-large.jpg` alt=`${articleTitle}`)
+      img(src=`img/${articleImg}-large.jpg` alt='')
   .article__data
     h5.article__title= articleTitle
     button.btn.article__btn Читать

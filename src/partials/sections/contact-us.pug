@@ -2,13 +2,13 @@ section.contact-us.container
   .contact-us__data
     h2.contact-us__title Мы всегда вам рады!
     span.contact-us__text Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
-    .tooltip.contact-us__tooltip(tabindex='0')
+    .tooltip.contact-us__tooltip(tabindex='0' aria-label='Подсказка')
       img.tooltip__icon(src='tooltip.svg')
       p.tooltip__text Реплицированные с зарубежных источников, исследования формируют глобальную сеть.
     form.form.contact-us__form
-      input.form__input(type='text' placeholder='Как вас зовут?')
-      input.form__input(type='tel' placeholder='Ваш телефон')
-      input.form__input(type='email' placeholder='Ваш e-mail')
+      input.form__input(type='text' placeholder='Как вас зовут?' aria-label='Введите ваше имя')
+      input.form__input(type='tel' placeholder='Ваш телефон' aria-label='Введите ваш телефон')
+      input.form__input(type='email' placeholder='Ваш e-mail' aria-label='Введите ваш e-mail')
       button.btn.form__btn(type='submit') Отправить
       label.checkbox.form__checkbox
         input.checkbox__input(type='checkbox')
@@ -22,4 +22,4 @@ section.contact-us.container
       source(srcset=`img/contact-us-1024px.jpg, img/contact-us-1024px@2x.jpg 2x` media='(min-width: 1024px)')
       source(srcset=`img/contact-us-768px.webp, img/contact-us-768px@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
       source(srcset=`img/contact-us-768px.jpg, img/contact-us-768px@2x.jpg 2x` media='(min-width: 768px)')
-      img(src=`img/contact-us-1400px.jpg` alt=`Мы всегда вам рады`)
+      img(src=`img/contact-us-1400px.jpg` alt='')

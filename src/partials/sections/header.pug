@@ -1,12 +1,12 @@
 header.header
   .row-0.header__row-0.container
-    a.lnk.row-0__link(href=`${logoLink}`)
-      img.row-0__logo(src='logo.svg')
+    a.lnk.row-0__link(href=`${logoLink}` aria-label='Главная страница')
+      img.row-0__logo(src='logo.svg' aria-hidden)
   .row-1.header__row-1.container
     .row-1__info
       .location.row-1__location
         span.location__text Ваш регион:
-        select.location__select.js-location-choices
+        select.location__select.js-location-choices(aria-label='Ваш регион')
           each city in ['Москва', 'Казань', 'Уфа', 'Пермь']
             option.location__option= city
         img.location__arrow(src='arrow-down.svg')
@@ -23,15 +23,15 @@ header.header
           li.menu__item
             a.lnk.menu__link(href='#')= text
     .btns.row-2__btns
-      button.btn.user.btns__user
+      button.btn.user.btns__user(aria-label='Личный кабинет')
         img.user__icon(src='user.svg')
-      button.btn.cart.btns__cart
+      button.btn.cart.btns__cart(aria-label='Корзина')
         span.cart__count 0
         img.cart__icon(src='cart.svg')
   .row-3.header__row-3.container
-    button.btn.burger.row-3__burger
-      img.burger__icon(src='burger.svg')
-    a.lnk.row-3__link(href=`${logoLink}`)
+    button.btn.burger.row-3__burger(aria-label='Открыть меню')
+      img.burger__icon(src='burger.svg' aria-hidden)
+    a.lnk.row-3__link(href=`${logoLink}` aria-label='Главная страница')
       img.row-3__logo(src='logo.svg')
     nav.menu.row-3__menu
       ul.lst.menu__list
@@ -39,25 +39,25 @@ header.header
           li.menu__item
             a.lnk.menu__link(href='#')= text
     .btns.row-3__btns
-      button.btn.user.btns__user
+      button.btn.user.btns__user(aria-label='Личный кабинет')
         img.user__icon(src='user.svg')
-      button.btn.cart.btns__cart
+      button.btn.cart.btns__cart(aria-label='Корзина')
         span.cart__count 0
         img.cart__icon(src='cart.svg')
   .row-4.header__row-4.container
     .search.row-4__search
-      input.search__input(placeholder='Я хочу купить...')
+      input.search__input(placeholder='Я хочу купить...' aria-label='Поиск товаров')
       img.search__icon(src='search.svg')
-      button.btn.submit.search__submit
+      button.btn.submit.search__submit(aria-label='Искать')
         img.submit__icon(src='arrow-right-circle-large.svg')
     .categories.row-4__categories
-      select.categories__select.js-categories-choices
+      select.categories__select.js-categories-choices(aria-label='Выбрать категорию')
         each category, index in ['Категория', 'Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
           option.categories__option(value=`${index === 0 ? '' : category}`)= category
       img.categories__arrow(src='arrow-down.svg')
     .btns.row-4__btns
-      button.btn.user.btns__user
+      button.btn.user.btns__user(aria-label='Личный кабинет')
         img.user__icon(src='user.svg')
-      button.btn.cart.btns__cart
+      button.btn.cart.btns__cart(aria-label='Корзина')
         span.cart__count 0
         img.cart__icon(src='cart.svg')
