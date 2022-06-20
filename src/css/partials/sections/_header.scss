@@ -491,6 +491,7 @@
 
     &__link {
       display: none;
+      width: max-content;
       transition: outline .1s ease-in-out,
         background-color .1s ease-in-out;
 
