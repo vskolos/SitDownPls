@@ -761,24 +761,32 @@
         transition: background-color .1s ease-in-out,
           outline .1s ease-in-out;
 
-        &:hover > .submit__icon > path,
-        &:hover > .submit__icon > circle {
-          stroke: var(--clr-primary-light);
-        }
-
-        &:focus-visible {
-          background-color: var(--clr-primary-light);
-          outline: 3px solid var(--clr-primary-light);
-          outline-offset: 0;
-        }
-
-        &:focus-visible > .submit__icon > path,
-        &:focus-visible > .submit__icon > circle {
+        &:hover > .submit__icon > path {
           stroke: var(--clr-white);
         }
 
-        &:active > .submit__icon > path,
+        &:hover > .submit__icon > circle {
+          fill: var(--clr-primary);
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
+
+        &:focus-visible > .submit__icon > path {
+          stroke: var(--clr-white);
+        }
+
+        &:focus-visible > .submit__icon > circle {
+          fill: var(--clr-primary-light);
+        }
+
+        &:active > .submit__icon > path {
+          stroke: var(--clr-white)
+        }
+
         &:active > .submit__icon > circle {
+          fill: var(--clr-primary-shade);
           stroke: var(--clr-primary-shade);
         }
 
@@ -787,7 +795,8 @@
 
           & > path,
           & > circle {
-            transition: stroke .1s ease-in-out;
+            transition: stroke .1s ease-in-out,
+              fill .1s ease-in-out;
           }
         }
       }
