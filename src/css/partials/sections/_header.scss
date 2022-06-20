@@ -788,6 +788,14 @@
           stroke: var(--clr-primary-shade);
         }
 
+        &:disabled > .submit__icon > path {
+          stroke: var(--clr-gray);
+        }
+
+        &:disabled > .submit__icon > circle {
+          stroke: var(--clr-gray);
+        }
+
         &__icon {
           display: block;
 
