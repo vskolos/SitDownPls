@@ -36,6 +36,10 @@
     position: relative;
     top: 1px;
     left: 2px;
+
+    @media (min-width: 768px) {
+      left: 5px;
+    }
   }
 
   .tooltip {
@@ -174,6 +178,10 @@
 
     &__checkbox {
       margin-top: -17px;
+
+      @media (min-width: 768px) {
+        margin-top: -18px;
+      }
     }
 
     .checkbox {
@@ -182,6 +190,10 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
+
+      @media (min-width: 768px) {
+        gap: 8px;
+      }
 
       &:hover > .checkbox__icon {
         background-color: var(--clr-pink-violet);
@@ -222,6 +234,11 @@
       &__text {
         font-size: 12px;
         line-height: 16px;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+          line-height: 19px;
+        }
       }
 
       &__link {
