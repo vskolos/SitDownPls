@@ -86,13 +86,6 @@
           background-color .1s ease-in-out,
           border-color .1s ease-in-out;
 
-        @media (min-width: 768px) {
-          margin-bottom: 80px;
-          grid-row: 2 / 3;
-          grid-column: 1 / 3;
-          align-self: start;
-        }
-
         &:hover {
           background-color: var(--clr-primary-light);
           border-color: var(--clr-primary-light);
@@ -113,6 +106,13 @@
           color: var(--clr-gray);
           background-color: var(--clr-gray-middle);
           border-color: var(--clr-gray-middle);
+        }
+
+        @media (min-width: 768px) {
+          margin-bottom: 80px;
+          grid-row: 2 / 3;
+          grid-column: 1 / 3;
+          align-self: start;
         }
       }
     }
