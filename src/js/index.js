@@ -1,12 +1,27 @@
+// Selects
+const locationSelect = new Choices('.js-location-choices', {
+  searchEnabled: false,
+  shouldSort: false,
+  itemSelectText: '',
+})
+
+const categorySelect = new Choices('.js-categories-choices', {
+  searchEnabled: false,
+  shouldSort: false,
+  itemSelectText: '',
+  placeholder: true,
+  placeholderValue: 'Категория',
+})
+
 // Sliders
-const heroSlider = new Swiper('.swiper.hero__swiper', {
+const heroSlider = new Swiper('.swiper.js-hero-swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
 })
 
-const offersSlider = new Swiper('.swiper.offers__swiper', {
+const offersSlider = new Swiper('.swiper.js-offers-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -33,7 +48,7 @@ const offersSlider = new Swiper('.swiper.offers__swiper', {
   },
 })
 
-const usefulSlider = new Swiper('.swiper.useful__swiper', {
+const usefulSlider = new Swiper('.swiper.js-useful-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

@@ -6,9 +6,10 @@ header.header
     .row-1__info
       .location.row-1__location
         span.location__text Ваш регион:
-        select.location__select
+        select.location__select.js-location-choices
           each city in ['Москва', 'Казань', 'Уфа', 'Пермь']
             option.location__option= city
+        img.location__arrow(src='arrow-down.svg')
       a.lnk.phone.row-1__phone(href='#') #[img.phone__icon(src='phone.svg')] +7 (495) 885-45-47
     nav.menu.row-1__menu
       ul.lst.menu__list
@@ -49,9 +50,11 @@ header.header
       input.search__input(placeholder='Я хочу купить...')
       button.btn.submit.search__submit
         img.submit__icon(src='arrow-right-circle-large.svg')
-    select.categories.row-4__categories
-      each category in ['Категория', 'Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
-        option.categories__option= category
+    .categories.row-4__categories
+      select.categories__select.js-categories-choices
+        each category, index in ['Категория', 'Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы']
+          option.categories__option(value=`${index === 0 ? '' : category}`)= category
+      img.categories__arrow(src='arrow-down.svg')
     .btns.row-4__btns
       button.btn.user.btns__user
         img.user__icon(src='user.svg')
