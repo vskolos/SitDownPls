@@ -32,9 +32,69 @@
   }
 
   &__tooltip {
+    display: inline;
     position: relative;
     top: 1px;
     left: 2px;
+  }
+
+  .tooltip {
+    &:hover > .tooltip__text,
+    &:focus-visible > .tooltip__text {
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover > .tooltip__icon > path:nth-child(2),
+    &:focus-visible > .tooltip__icon > path:nth-child(2) {
+      fill: transparent;
+    }
+
+    &:hover > .tooltip__icon > path:nth-child(3),
+    &:focus-visible > .tooltip__icon > path:nth-child(3) {
+      fill: var(--clr-white);
+    }
+
+    &__icon {
+      cursor: pointer;
+
+      & > path {
+        transition: fill .1s ease-in-out;
+      }
+    }
+
+    &__text {
+      display: flex;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      right: 50%;
+      transform: translateX(50%);
+      margin-block: 0;
+      padding: 5px;
+      max-width: 157px;
+      text-align: center;
+      font-size: 9px;
+      line-height: 14px;
+      color: var(--clr-white);
+      background-color: var(--clr-black);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .1s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: 50%;
+        transform: translateX(50%);
+        border-top: 8px solid var(--clr-black);
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+      }
+    }
   }
 
   &__form {
@@ -47,15 +107,32 @@
     gap: 30px;
 
     &__input {
-      padding: 7px 18px;
+      padding: 6px 17px;
       font-size: 16px;
       line-height: 40px;
       background-color: var(--clr-gray-light);
-      border: none;
+      border: 1px solid var(--clr-gray-light);
       border-radius: 10px;
+      transition: border-color .1s ease-in-out,
+        background-color .1s ease-in-out;
+
+      &:placeholder-shown + .search__icon > path {
+        fill: var(--clr-gray);
+      }
 
       &::placeholder {
         color: var(--clr-gray);
+      }
+
+      &:hover {
+        background-color: var(--clr-gray-middle);
+        border-color: var(--clr-gray-middle);
+      }
+
+      &:focus-visible {
+        background-color: var(--clr-pink-light);
+        border-color: var(--clr-primary);
+        outline: none;
       }
     }
 
@@ -68,6 +145,31 @@
       color: var(--clr-white);
       background-color: var(--clr-primary);
       border-radius: 10px;
+      transition: color .1s ease-in-out,
+        background-color .1s ease-in-out,
+        border-color .1s ease-in-out;
+
+      &:hover {
+        background-color: var(--clr-primary-light);
+        border-color: var(--clr-primary-light);
+      }
+
+      &:focus-visible {
+        background-color: var(--clr-primary-light);
+        border-color: var(--clr-primary-shade);
+        outline: none;
+      }
+
+      &:active {
+        background-color: var(--clr-primary-shade);
+        border-color: var(--clr-primary-shade);
+      }
+
+      &:disabled {
+        color: var(--clr-gray);
+        background-color: var(--clr-gray-middle);
+        border-color: var(--clr-gray-middle);
+      }
     }
 
     &__checkbox {
@@ -75,10 +177,47 @@
     }
 
     .checkbox {
+      position: relative;
       display: flex;
       align-items: center;
       gap: 6px;
       cursor: pointer;
+
+      &:hover > .checkbox__icon {
+        background-color: var(--clr-pink-violet);
+      }
+
+      &__input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+
+        &:not(:checked) + .checkbox__icon {
+          outline: 1px solid var(--clr-gray);
+        }
+
+        &:not(:checked) + .checkbox__icon > * {
+          fill: transparent;
+          stroke: transparent;
+        }
+
+        &:focus-visible + .checkbox__icon {
+          background-color: var(--clr-pink-violet);
+        }
+      }
+
+      &__icon {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        outline-offset: -1px;
+        transition: outline .1s ease-in-out;
+
+        & > * {
+          transition: fill .1s ease-in-out,
+            stroke .1s ease-in-out;
+        }
+      }
 
       &__text {
         font-size: 12px;
@@ -88,6 +227,23 @@
       &__link {
         color: var(--clr-primary);
         text-decoration: underline;
+        transition: outline .1s ease-in-out,
+          background-color .1s ease-in-out;
+
+        &:hover {
+          color: var(--clr-primary-light);
+        }
+
+        &:focus-visible {
+          color: var(--clr-primary-shade);
+          background-color: var(--clr-pink-violet);
+          outline: 2px solid var(--clr-pink-violet);
+          outline-offset: 0;
+        }
+
+        &:active {
+          color: var(--clr-primary-shade);
+        }
       }
     }
   }
