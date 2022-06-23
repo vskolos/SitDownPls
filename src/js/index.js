@@ -15,6 +15,14 @@ const categorySelect = new Choices('.js-categories-choices', {
   placeholderValue: 'Категория',
 })
 
+// Burger menu
+const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
+const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
+const burgerMenuContent = document.querySelector('.burger__content')
+
+burgerMenuOpenButton.addEventListener('click', () => burgerMenuContent.classList.add('burger__content--opened'))
+burgerMenuCloseButton.addEventListener('click', () => burgerMenuContent.classList.remove('burger__content--opened'))
+
 // Sliders
 const heroSlider = new Swiper('.swiper.js-hero-swiper', {
   pagination: {

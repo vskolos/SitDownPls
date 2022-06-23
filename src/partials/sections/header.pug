@@ -29,8 +29,21 @@ header.header
         span.cart__count 0
         img.cart__icon(src='cart.svg')
   .row-3.header__row-3.container
-    button.btn.burger.row-3__burger(aria-label='Открыть меню')
-      img.burger__icon(src='burger.svg' aria-hidden)
+    button.btn.burger.row-3__burger.js-burger-menu-open(aria-label='Открыть меню')
+      img.burger__icon(src='burger.svg')
+    .burger__content
+      button.btn.burger__close.js-burger-menu-close(aria-label='Закрыть меню')
+        img.burger__close-icon(src='close.svg')
+      img.burger__elephant(src='elephant.svg')
+      nav.burger__nav
+        ul.lst.menu-1.burger__menu-1
+          each text in ['Каталог', 'Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
+            li.menu-1__item
+              a.lnk.menu-1__link(href='#')= text
+        ul.lst.menu-2.burger__menu-2
+          each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
+            li.menu-2__item
+              a.lnk.menu-2__link(href='#')= text
     a.lnk.row-3__link(href=`${logoLink}` aria-label='Главная страница')
       img.row-3__logo(src='logo.svg')
     nav.menu.row-3__menu
