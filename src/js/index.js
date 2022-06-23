@@ -47,6 +47,8 @@ const offersSlider = new Swiper('.swiper.js-offers-swiper', {
   },
   breakpoints: {
     320: {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
       spaceBetween: 16,
     },
     768: {
@@ -79,6 +81,8 @@ const usefulSlider = new Swiper('.swiper.js-useful-swiper', {
   },
   breakpoints: {
     320: {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
       spaceBetween: 16,
     },
     768: {
