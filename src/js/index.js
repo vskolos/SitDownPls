@@ -138,7 +138,6 @@ window.addEventListener('resize', () => {
 
 // Form validation
 const contactUsForm = document.querySelector('.js-contact-us-form')
-contactUsForm.addEventListener('submit', (e) => e.preventDefault())
 
 const validation = new JustValidate(contactUsForm, {
   errorLabelCssClass: 'form__label--error',
@@ -146,6 +145,7 @@ const validation = new JustValidate(contactUsForm, {
   successFieldCssClass: 'form__input--valid',
   errorLabelStyle: {},
 })
+
 validation
   .addField('#name', [
     {
@@ -174,6 +174,14 @@ validation
       errorMessage: 'Введите корректный e-mail',
     },
   ])
+  .onSuccess((event) => {
+    console.log('Validation passes and form submitted', event)
+    alert('Спасибо, мы вам перезвоним!')
+    contactUsForm.reset()
+    validation.refresh()
+  })
+
+contactUsForm.addEventListener('submit', (e) => e.preventDefault())
 
 // aria-hidden for all inline svg images
 const svgs = document.querySelectorAll('svg')
