@@ -187,6 +187,7 @@
 
     &__info {
       padding-inline: 9px;
+      height: calc(100% - 230px);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -250,6 +251,7 @@
     }
 
     &__btn {
+      margin-top: auto;
       padding: 17px 33px;
       font-weight: 600;
       font-size: 16px;
