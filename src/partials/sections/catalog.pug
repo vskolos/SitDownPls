@@ -1,0 +1,63 @@
+section.catalog.container
+  h1.catalog__title.visually-hidden Каталог интернет-магазина SitDownPls
+  aside.catalog__aside
+    .filter.catalog__filter
+      h4.filter__title.filter__title--mobile Фильтры:
+      h4.filter__title.filter__title--desktop Фильтровать по:
+      ul.lst.filter__list
+        li.param.filter__param
+          button.btn.param__btn.js-filter-category-button
+            span.param__btn-text Категория
+            img.param__btn-icon(src='arrow-down.svg')
+          ul.lst.param__options.js-filter-category-options
+            each text in ['Диваны', 'Кресла', 'Пуфы', 'Кровати', 'Тумбы', 'Комоды', 'Стулья', 'Столы', 'Аксессуары']
+              li.param__option
+                label.checkbox.param__checkbox
+                  input.checkbox__input(type='checkbox')
+                  img.checkbox__icon(src='checkbox.svg')
+                  span.checkbox__text= text
+        li.param.filter__param
+          button.btn.param__btn.js-filter-price-button
+            span.param__btn-text Цена
+            img.param__btn-icon(src='arrow-down.svg')
+          .param__options.param__range.js-filter-price-options
+            span.param__range-text от
+              input.param__range-input.js-filter-price-from(type='text')
+            span.param__range-text до
+              input.param__range-input.js-filter-price-to(type='text')
+          .param__range-slider.js-filter-price-nouislider(type='range' min='0' max='150000' step='100' value='0')
+        li.param.filter__param
+          button.btn.param__btn.js-filter-discount-button
+            span.param__btn-text Скидка
+            img.param__btn-icon(src='arrow-down.svg')
+          ul.lst.param__options.js-filter-discount-options
+            each text in ['> 5 000', '< 5 000', 'Не важно']
+              li.param__option
+                label.checkbox.param__checkbox
+                  input.checkbox__input(type='checkbox')
+                  img.checkbox__icon(src='checkbox.svg')
+                  span.checkbox__text= text
+        li.param.filter__param
+          button.btn.param__btn.js-filter-color-button
+            span.param__btn-text Цвет
+            img.param__btn-icon(src='arrow-down.svg')
+          ul.lst.param__options.js-filter-color-options
+            each text in ['Коричневый', 'Черный', 'Бежевый', 'Серый', 'Белый', 'Синий', 'Оранжевый', 'Желтый', 'Зеленый']
+              li.param__option
+                label.checkbox.param__checkbox
+                  input.checkbox__input(type='checkbox')
+                  img.checkbox__icon(src='checkbox.svg')
+                  span.checkbox__text= text
+    .banner.catalog__banner
+      - var className = 'banner__card'
+      include ../blocks/banner-card
+  h2.catalog__title Каталог
+  ul.lst.catalog__list
+    each data in [{ img: 'product-1', name: 'Диван кожаный “R-94”', price: '94 990 руб', rating: '5,0' }, { img: 'product-2', name: 'Диван апартековый “T-75”', price: '69 990 руб', rating: '4,9' }, { img: 'product-3', name: 'Диван тканевый “D-31”', price: '28 490 руб', rating: '4,8' }, { img: 'product-4', name: 'Диван велюровый “Y-68”', price: '22 990 руб', rating: '4,8' }, { img: 'product-5', name: 'Диван из шинила “W-95”', price: '22 990 руб', rating: '4,8' }, { img: 'product-6', name: 'Диван флоковый “G-41”', price: '17 990 руб', rating: '4,8' }, { img: 'product-7', name: 'Диван шиниловый “V-43”', price: '19 990 руб', rating: '4,8' }, { img: 'product-8', name: 'Диван велюровый “S-99”', price: '19 990 руб', rating: '4,7' }, { img: 'product-9', name: 'Диван из кожзама “F-85”', price: '26 990 руб', rating: '4,7' }, { img: 'product-10', name: 'Диван флоковый “H-64”', price: '25 990 руб', rating: '4,6' }, { img: 'product-11', name: 'Диван флоковый “H-58”', price: '23 990 руб', rating: '4,6' }, { img: 'product-12', name: 'Диван из кожзама “R-43”', price: '33 990 руб', rating: '4,6' }, { img: 'product-13', name: 'Диван из шинила “С-42”', price: '18 990 руб', rating: '4,6' }, { img: 'product-14', name: 'Диван велюровый “U-58”', price: '21 990 руб', rating: '4,6' }, { img: 'product-15', name: 'Диван флоковый “F-41”', price: '17 990 руб', rating: '4,5' }, { img: 'product-16', name: 'Диван велюровый “R-85”', price: '34 990 руб', rating: '4,5' }, { img: 'product-17', name: 'Диван велюровый “S-44”', price: '19 990 руб', rating: '4,5' }, { img: 'product-18', name: 'Диван из шинила “С-80”', price: '20 990 руб', rating: '4,4' }]
+      li.catalog__product
+        - var className = 'catalog__card'
+        - var productImg = data.img
+        - var productName = data.name
+        - var productPrice = data.price
+        - var productRating = data.rating
+        include ../blocks/product-card

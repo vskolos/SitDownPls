@@ -1,0 +1,12 @@
+article(class=`card ${className ? className : ''}`)
+  .card__img
+    picture.card__picture
+      source(srcset=`img/banner-card.webp, img/banner-card@2x.webp 2x` type='image/webp')
+      source(srcset=`img/banner-card.jpg, img/banner-card@2x.jpg 2x`)
+      img(src=`img/banner-card.jpg` alt='')
+  .card__data
+    h5.card__title Оксфорд 1950
+    h6.card__text Новая коллекция изысканных кресел
+    a.lnk.card__link(href='#')
+      span.card__link-text В каталог
+      img.card__link-icon(src='arrow-right-circle.svg')
