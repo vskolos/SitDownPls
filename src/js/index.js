@@ -125,7 +125,7 @@ function showRatedProducts() {
 showRatedProducts()
 showMoreRatedProductsBtn.addEventListener('click', showRatedProducts)
 
-const currentWindowWidth = window.innerWidth
+let currentWindowWidth = window.innerWidth
 window.addEventListener('resize', () => {
   if (window.innerWidth !== currentWindowWidth) {
     currentWindowWidth = window.innerWidth
