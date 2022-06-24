@@ -333,7 +333,8 @@
               height: 20px;
               border-radius: 2px;
               outline-offset: -1px;
-              transition: outline .1s ease-in-out;
+              transition: outline .1s ease-in-out,
+                background-color .1s ease-in-out;
 
               & > * {
                 transition: fill .1s ease-in-out,
@@ -647,7 +648,7 @@
       grid-column: 1 / 10;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1400px) {
       grid-column: 4 / 13;
     }
   }

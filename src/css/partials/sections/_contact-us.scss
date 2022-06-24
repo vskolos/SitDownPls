@@ -246,7 +246,8 @@
         height: 14px;
         border-radius: 2px;
         outline-offset: -1px;
-        transition: outline .1s ease-in-out;
+        transition: outline .1s ease-in-out,
+          background-color .1s ease-in-out;
 
         & > * {
           transition: fill .1s ease-in-out,
