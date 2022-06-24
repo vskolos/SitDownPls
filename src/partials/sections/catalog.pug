@@ -13,18 +13,18 @@ section.catalog.container
             each text in ['Диваны', 'Кресла', 'Пуфы', 'Кровати', 'Тумбы', 'Комоды', 'Стулья', 'Столы', 'Аксессуары']
               li.param__option
                 label.checkbox.param__checkbox
-                  input.checkbox__input(type='checkbox')
+                  input.checkbox__input(type='checkbox' aria-label=`${text}`)
                   img.checkbox__icon(src='checkbox.svg')
-                  span.checkbox__text= text
+                  span.checkbox__text(aria-hidden='true')= text
         li.param.filter__param
           button.btn.param__btn.js-filter-price-button
             span.param__btn-text Цена
             img.param__btn-icon(src='arrow-down.svg')
           .param__options.param__range.js-filter-price-options
             span.param__range-text от
-              input.param__range-input.js-filter-price-from(type='text')
+              input.param__range-input.js-filter-price-from(type='text' aria-label='Фильтр по цене товара, от')
             span.param__range-text до
-              input.param__range-input.js-filter-price-to(type='text')
+              input.param__range-input.js-filter-price-to(type='text' aria-label='Фильтр по цене товара, до')
           .param__range-slider.js-filter-price-nouislider(type='range' min='0' max='150000' step='100' value='0')
         li.param.filter__param
           button.btn.param__btn.js-filter-discount-button
@@ -34,9 +34,9 @@ section.catalog.container
             each text in ['> 5 000', '< 5 000', 'Не важно']
               li.param__option
                 label.checkbox.param__checkbox
-                  input.checkbox__input(type='checkbox')
+                  input.checkbox__input(type='checkbox' aria-label=`${text}`)
                   img.checkbox__icon(src='checkbox.svg')
-                  span.checkbox__text= text
+                  span.checkbox__text(aria-hidden='true')= text
         li.param.filter__param
           button.btn.param__btn.js-filter-color-button
             span.param__btn-text Цвет
@@ -45,9 +45,9 @@ section.catalog.container
             each text in ['Коричневый', 'Черный', 'Бежевый', 'Серый', 'Белый', 'Синий', 'Оранжевый', 'Желтый', 'Зеленый']
               li.param__option
                 label.checkbox.param__checkbox
-                  input.checkbox__input(type='checkbox')
+                  input.checkbox__input(type='checkbox' aria-label=`${text}`)
                   img.checkbox__icon(src='checkbox.svg')
-                  span.checkbox__text= text
+                  span.checkbox__text(aria-hidden='true')= text
     .banner.catalog__banner
       - var className = 'banner__card'
       include ../blocks/banner-card

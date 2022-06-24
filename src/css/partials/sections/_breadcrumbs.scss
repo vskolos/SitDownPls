@@ -10,6 +10,14 @@
     grid-column: 1 / 7;
     display: flex;
     gap: 6px;
+
+    @media (min-width: 1024px) {
+      grid-column: 1 / 10;
+    }
+
+    @media (min-width: 1400px) {
+      grid-column: 1 / 13;
+    }
   }
 
   &__item {

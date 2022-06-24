@@ -84,7 +84,24 @@ filterPriceSlider.noUiSlider.on('update', function (values, handle) {
 filterPriceFromInput.addEventListener('change', () => filterPriceSlider.noUiSlider.set([filterPriceFromInput.value, null]))
 filterPriceToInput.addEventListener('change', () => filterPriceSlider.noUiSlider.set([null, filterPriceToInput.value]))
 
-// Show more rated products
+
+// Remove filter parameter buttons from tabindex
+function setParamButtonsAriaHidden() {
+  const paramButtons = document.querySelectorAll('.param__btn')
+  if (window.innerWidth >= 1400) {
+    paramButtons.forEach(button => {
+      button.ariaDisabled = true
+      button.setAttribute('tabindex', '-1')
+    })
+  } else {
+    paramButtons.forEach(button => {
+      button.ariaDisabled = false
+      button.removeAttribute('tabindex')
+    })
+  }
+}
+
+// Products pagination
 const catalogSection = document.querySelector('.catalog')
 const productsList = document.querySelector('.catalog__list')
 const products = document.querySelectorAll('.catalog__product')
@@ -117,6 +134,7 @@ function createPagination(count) {
 
     const button = document.createElement('button')
     button.classList.add('btn', 'pagination__btn')
+    button.ariaLabel = `Страница ${i + 1}`
     if (i === 0)
       button.classList.add('pagination__btn--active')
     button.textContent = i + 1
@@ -144,11 +162,11 @@ if (lastPage > 1)
   catalogSection.append(createPagination(lastPage))
 
 showProducts()
+setParamButtonsAriaHidden()
 
 let currentWindowWidth = window.innerWidth
 
-window.addEventListener('resize', () => {
-
+function resizeHandler() {
   if (window.innerWidth !== currentWindowWidth) {
 
     currentWindowWidth = window.innerWidth
@@ -162,7 +180,15 @@ window.addEventListener('resize', () => {
 
     catalogSection.append(createPagination(lastPage))
     showProducts()
+
+    setParamButtonsAriaHidden()
   }
+}
+
+let timeoutID
+window.addEventListener('resize', () => {
+  clearTimeout(timeoutID)
+  timeoutID = setTimeout(resizeHandler, 300)
 })
 
 // aria-hidden for all inline svg images
