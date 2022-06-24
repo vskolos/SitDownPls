@@ -1,10 +1,5 @@
 section.breadcrumbs.container
   ul.lst.breadcrumbs__list
-    li.breadcrumbs__item
-      a.lnk.breadcrumbs__link(href='#') Главная
-    li.breadcrumbs__item
-      a.lnk.breadcrumbs__link(href='#') Каталог
-    li.breadcrumbs__item
-      a.lnk.breadcrumbs__link(href='#') Диваны
-    li.breadcrumbs__item
-      a.lnk.breadcrumbs__link.breadcrumbs__link--current(href='#') Прямые диваны
+    each text, index in breadcrumbLinks
+      li.breadcrumbs__item
+        a(class=`lnk breadcrumbs__link${index === breadcrumbLinks.length - 1 ? ' breadcrumbs__link--current' : ''}` href='#')= text
