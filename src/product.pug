@@ -1,11 +1,14 @@
 doctype html
 html(lang='ru')
   - var title = 'Страница товара | Интернет-магазин SitDownPls'
-  - var styles = ['normalize.css', 'product.css']
-  - var scripts = ['product.js']
+  - var styles = ['normalize.css', 'swiper.bundle.min.css', 'choices.min.css', 'product.css']
+  - var scripts = ['swiper.bundle.min.js', 'choices.min.js', 'just-validate.production.min.js', 'product.js']
   include partials/head
   body
     - var logoLink = '/'
+    - var breadcrumbLinks = ['Главная', 'Каталог', 'Диваны', 'Прямые диваны', 'D-31']
     include partials/sections/header
-    include partials/sections/hero
-    include partials/sections/offers
+    include partials/sections/breadcrumbs
+    include partials/sections/product
+    include partials/sections/alike
+    include partials/sections/footer
