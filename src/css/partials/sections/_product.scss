@@ -62,18 +62,25 @@
     }
 
     &-slide {
-      width: max-content;
+      max-width: 137px;
+      width: fit-content;
+      height: 100%;
+      cursor: pointer;
 
       @media (min-width: 768px) {
-        width: auto;
-        height: max-content;
+        width: 100%;
+        height: fit-content;
       }
 
       @media (min-width: 1024px) {
-        width: max-content;
-        height: auto;
+        width: fit-content;
+        height: 100%;
       }
     }
+  }
+
+  .swiper-vertical>.swiper-wrapper {
+    align-items: center;
   }
 
   .slide {
@@ -296,6 +303,10 @@
     }
   }
 
+  &__scheme:last-child {
+    justify-self: end;
+  }
+
   &__scheme > * {
     display: block;
   }
@@ -358,7 +369,7 @@
 
       &::after {
         @media (min-width: 768px) {
-          content: '.........................................................................................................................................';
+          content: '.........................................................................................................................................................................';
           position: absolute;
         }
       }
