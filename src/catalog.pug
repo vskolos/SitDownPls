@@ -8,6 +8,7 @@ html(lang='ru')
     - var logoLink = '/'
     - var breadcrumbLinks = ['Главная', 'Каталог', 'Диваны', 'Прямые диваны']
     include partials/sections/header
-    include partials/sections/breadcrumbs
-    include partials/sections/catalog
+    main
+      include partials/sections/breadcrumbs
+      include partials/sections/catalog
     include partials/sections/footer
