@@ -259,6 +259,8 @@ photosSlides.forEach((slide, number) =>
         },
         breakpoints: {
           320: {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
             spaceBetween: 62,
           },
           768: {
