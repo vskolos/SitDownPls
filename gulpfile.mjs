@@ -20,7 +20,7 @@ import fs from 'fs'
 import pug from 'gulp-pug'
 
 const isProduction = argv.includes('--prod')
-const FAVICON_DATA_FILE = 'src/faviconData.json'
+const FAVICON_DATA_FILE = 'dist/favicons/faviconData.json'
 const src = gulp.src
 const dest = gulp.dest
 const watch = gulp.watch
@@ -58,6 +58,7 @@ function imgClean() {
 function imgCopy() {
   return src('src/img/*.{jpg,jpeg,png}')
     .pipe(rename({ suffix: '@2x' }))
+    .pipe(imagemin())
     .pipe(dest('dist/img'))
 }
 
