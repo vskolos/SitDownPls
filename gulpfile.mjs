@@ -58,7 +58,6 @@ function imgClean() {
 function imgCopy() {
   return src('src/img/*.{jpg,jpeg,png}')
     .pipe(rename({ suffix: '@2x' }))
-    .pipe(imagemin())
     .pipe(dest('dist/img'))
 }
 
