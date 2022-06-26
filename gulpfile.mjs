@@ -108,7 +108,7 @@ function favicons(done) {
     {
       masterPicture: 'src/img/favicon.svg',
       dest: 'dist/favicons',
-      iconsPath: '/favicons/',
+      iconsPath: 'favicons/',
       design: {
         ios: {
           pictureAspect: 'backgroundAndMargin',
