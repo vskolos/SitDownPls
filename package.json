@@ -3,7 +3,6 @@
   "description": "Final project of Skillbox advanced web layout course",
   "author": "Vsevolod Kolos",
   "private": "true",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git@gitlab.skillbox.ru:vsevolod_kolos/weblayout-advanced-coursework.git"
