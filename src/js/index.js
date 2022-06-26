@@ -1,12 +1,15 @@
-// Selects
-const locationSelect = new Choices('.js-location-choices', {
+/* eslint no-undef: 'off' */
+
+// Select location
+new Choices('.js-location-choices', {
   allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
   itemSelectText: '',
 })
 
-const categorySelect = new Choices('.js-categories-choices', {
+// Select category
+new Choices('.js-categories-choices', {
   allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
@@ -15,7 +18,7 @@ const categorySelect = new Choices('.js-categories-choices', {
   placeholderValue: 'Категория',
 })
 
-// Burger menu
+// Burger menu open/close
 const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
 const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
 const burgerMenuContent = document.querySelector('.burger__content')
@@ -27,8 +30,8 @@ burgerMenuCloseButton.addEventListener('click', () =>
   burgerMenuContent.classList.remove('burger__content--opened')
 )
 
-// Sliders
-const heroSlider = new Swiper('.swiper.js-hero-swiper', {
+// Hero section slider
+new Swiper('.swiper.js-hero-swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -39,7 +42,8 @@ const heroSlider = new Swiper('.swiper.js-hero-swiper', {
   },
 })
 
-const offersSlider = new Swiper('.swiper.js-offers-swiper', {
+// Offers section slider
+new Swiper('.swiper.js-offers-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -73,7 +77,8 @@ const offersSlider = new Swiper('.swiper.js-offers-swiper', {
   },
 })
 
-const usefulSlider = new Swiper('.swiper.js-useful-swiper', {
+// Useful section slider
+new Swiper('.swiper.js-useful-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

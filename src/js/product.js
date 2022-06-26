@@ -1,12 +1,15 @@
-// Selects
-const locationSelect = new Choices('.js-location-choices', {
+/* eslint no-undef: 'off' */
+
+// Select location
+new Choices('.js-location-choices', {
   allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
   itemSelectText: '',
 })
 
-const categorySelect = new Choices('.js-categories-choices', {
+// Select category
+new Choices('.js-categories-choices', {
   allowHTML: false,
   searchEnabled: false,
   shouldSort: false,
@@ -15,7 +18,7 @@ const categorySelect = new Choices('.js-categories-choices', {
   placeholderValue: 'Категория',
 })
 
-// Burger menu
+// Burger menu open/close
 const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
 const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
 const burgerMenuContent = document.querySelector('.burger__content')
@@ -27,7 +30,7 @@ burgerMenuCloseButton.addEventListener('click', () =>
   burgerMenuContent.classList.remove('burger__content--opened')
 )
 
-// Product photos slider
+// Product thumbnails slider
 const thumbsSlider = new Swiper('.swiper.js-product-thumbs-swiper', {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
@@ -54,7 +57,8 @@ const thumbsSlider = new Swiper('.swiper.js-product-thumbs-swiper', {
   },
 })
 
-const photosSlider = new Swiper('.swiper.js-product-photos-swiper', {
+// Product photos slider
+new Swiper('.swiper.js-product-photos-swiper', {
   spaceBetween: 16,
   thumbs: {
     swiper: thumbsSlider,
@@ -67,7 +71,7 @@ const photosSlider = new Swiper('.swiper.js-product-photos-swiper', {
 })
 
 // Alike products slider
-const alikeSlider = new Swiper('.swiper.js-alike-swiper', {
+new Swiper('.swiper.js-alike-swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
