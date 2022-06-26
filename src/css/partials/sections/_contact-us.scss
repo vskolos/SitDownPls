@@ -238,6 +238,10 @@
         &:focus-visible + .checkbox__icon {
           background-color: var(--clr-pink-violet);
         }
+
+        &.form__input--invalid + .checkbox__icon {
+          outline-color: var(--clr-red-input);
+        }
       }
 
       &__icon {

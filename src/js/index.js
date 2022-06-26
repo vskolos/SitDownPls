@@ -189,6 +189,12 @@ validation
       errorMessage: 'Введите корректный e-mail',
     },
   ])
+  .addField('#checkbox', [
+    {
+      rule: 'required',
+      errorMessage: 'Примите пользовательское соглашение',
+    },
+  ])
   .onSuccess(() => {
     alert('Спасибо, мы вам перезвоним!')
     contactUsForm.reset()
