@@ -187,7 +187,7 @@ function html() {
 }
 
 function watchFiles() {
-  gulpif(
+  return gulpif(
     !isProduction,
     browserSync.init({
       server: {
@@ -198,19 +198,26 @@ function watchFiles() {
 }
 
 const vendor = series(vendorCSS, vendorJS)
-watch('src/vendor/**', vendor)
-
-watch(['src/**/*.pug', 'src/img/inline/*.svg'], html)
-watch('src/fonts/**', fonts)
-watch('src/js/**/*.js', js)
-watch('src/css/**/*.scss', scss)
-
 const images = series(imgClean, imgCopyResized, imgCopy, imgToWebp, imgMin)
-watch('src/img/*', images)
+
+if (!isProduction) {
+  watch('src/vendor/**', vendor)
+  watch('src/img/*', images)
+  watch(['src/**/*.pug', 'src/img/inline/*.svg'], html)
+  watch('src/fonts/**', fonts)
+  watch('src/js/**/*.js', js)
+  watch('src/css/**/*.scss', scss)
+}
 
 export { clean }
-export default series(
-  clean,
-  parallel(fonts, vendor, images, series(favicons, html), scss, js),
-  watchFiles
-)
+
+export default isProduction
+  ? series(
+      clean,
+      parallel(fonts, vendor, images, series(favicons, html), scss, js)
+    )
+  : series(
+      clean,
+      parallel(fonts, vendor, images, series(favicons, html), scss, js),
+      watchFiles
+    )
