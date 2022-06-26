@@ -189,8 +189,7 @@ validation
       errorMessage: 'Введите корректный e-mail',
     },
   ])
-  .onSuccess((event) => {
-    console.log('Validation passes and form submitted', event)
+  .onSuccess(() => {
     alert('Спасибо, мы вам перезвоним!')
     contactUsForm.reset()
     validation.refresh()
