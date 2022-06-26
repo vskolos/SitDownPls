@@ -175,6 +175,9 @@
 
   .form {
     position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 624px;
     padding: 30px 16px;
     display: flex;
     flex-direction: column;
@@ -188,30 +191,22 @@
       gap: 30px;
     }
 
-    @media (min-width: 1024px) {
-      justify-self: center;
-      width: 624px;
-    }
-
     &__title {
       margin-block: 0;
+      max-width: 380px;
       font-weight: 400;
       font-size: 24px;
       line-height: 1;
-
-      @media (min-width: 768px) {
-        max-width: 380px;
-      }
     }
 
     &__text {
       margin-block: -8px 0;
+      max-width: 380px;
       font-size: 14px;
       line-height: 19px;
 
       @media (min-width: 768px) {
         margin-block-start: -22px;
-        max-width: 380px;
       }
     }
 
@@ -403,6 +398,11 @@
     right: 16px;
     z-index: 100;
 
+    @media (min-width: 768px) {
+      top: 20px;
+      right: 20px;
+    }
+
     &:hover > svg > path {
       fill: var(--clr-primary-light);
     }
@@ -423,6 +423,11 @@
 
     svg {
       display: block;
+
+      @media (min-width: 768px) {
+        width: 20px;
+        height: 20px;
+      }
 
       & > path {
         transition: fill 0.1s ease-in-out;
