@@ -71,7 +71,7 @@ new Swiper('.swiper.js-product-photos-swiper', {
 })
 
 // Create close button with svg icon
-function createSvgCloseButton() {
+function createCloseButton() {
   const button = document.createElement('button')
   button.classList.add('btn', 'modal__close')
 
@@ -215,7 +215,7 @@ function createPhotosModal(slidesAmount) {
     thumbsModalSwiperPaginationNext
   )
 
-  const modalCloseButton = createSvgCloseButton()
+  const modalCloseButton = createCloseButton()
   modalCloseButton.classList.add('gallery__close')
   modalCloseButton.addEventListener('click', () => {
     modal.remove()
@@ -343,6 +343,64 @@ new Swiper('.swiper.js-alike-swiper', {
   },
 })
 
+// Create icon for thanks modal
+function createSvgElephant() {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  svg.setAttribute('width', '73')
+  svg.setAttribute('height', '50')
+  svg.setAttribute('viewBox', '0 0 73 50')
+  svg.setAttribute('fill', 'none')
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+  path.setAttribute(
+    'd',
+    'M11.5981 44.8056C20.7832 44.8056 22.514 36.7296 22.514 30.2636C23.6049 30.2636 32.2264 30.2636 36.1589 30.2636C57.5492 30.2636 57.5547 0 36.8411 0C31.2072 0 27.5783 3.41551 26.6068 4.60532C15.0496 4.60532 13.6449 10.644 13.6449 22.3694C13.6449 24.6314 13.6449 31.9846 13.6449 33.1173C13.6449 35.8742 12.5369 37.6629 9.55072 37.6629C7.00117 37.6629 5.79361 35.4053 4.77502 32.2373C4.24423 32.5224 0.517138 34.5383 -2.23517e-06 34.8689C1.12775 38.0337 2.33531 44.8056 11.5981 44.8056ZM24.5839 17.7634C28.0832 17.7634 28.3806 23.0266 24.3363 23.0266C20.9271 23.0266 21.0158 17.7634 24.5839 17.7634ZM36.8418 33.5355C33.8843 33.5355 25.243 32.8952 25.243 32.8952V49.1213L33.4299 49.2382L35.4766 37.5005L61.4019 37.0134L62.0848 49.8824L71.6362 50C71.6362 50 73 24.7938 73 19.7371C73 10.3576 68.8035 5.0489 59.3551 4.60532C56.9878 4.49426 53.8904 4.05263 51.8505 3.94742C60.7421 14.7668 53.6673 33.5355 36.8418 33.5355ZM53.2156 40.1146L53.8972 49.6486L59.3551 49.7662L58.6729 40.1146H53.2156ZM36.1589 49.3564L41.6168 49.4733L42.9806 40.1146H38.2049L36.1589 49.3564Z'
+  )
+  path.setAttribute('fill-rule', 'evenodd')
+  path.setAttribute('clip-rule', 'evenodd')
+  path.setAttribute('fill', '#FF862F')
+
+  svg.append(path)
+  return svg
+}
+
+// Thanks for the order modal
+function createThanksModal() {
+  const modal = document.createElement('div')
+  modal.classList.add('modal', 'container')
+
+  const thanksContainer = document.createElement('div')
+  thanksContainer.classList.add('thanks', 'modal__thanks')
+
+  const thanksIcon = createSvgElephant()
+  thanksIcon.classList.add('thanks__icon')
+
+  const thanksTitle = document.createElement('h5')
+  thanksTitle.classList.add('thanks__title')
+  thanksTitle.textContent = 'Спасибо, мы вам перезвоним!'
+
+  const thanksCloseButton = createCloseButton()
+  thanksCloseButton.classList.add('form__close')
+
+  thanksCloseButton.addEventListener('click', () => {
+    modal.remove()
+    document.body.style.removeProperty('overflow')
+  })
+
+  thanksContainer.append(thanksIcon, thanksTitle, thanksCloseButton)
+  modal.append(thanksContainer)
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove()
+      document.body.style.removeProperty('overflow')
+    }
+  })
+
+  return modal
+}
+
 // Buy per 1 click modal
 function createBuyPerClickModal() {
   const modal = document.createElement('div')
@@ -444,7 +502,7 @@ function createBuyPerClickModal() {
     formCheckboxText
   )
 
-  const formCloseButton = createSvgCloseButton()
+  const formCloseButton = createCloseButton()
   formCloseButton.classList.add('form__close')
 
   formCloseButton.addEventListener('click', () => {
@@ -463,7 +521,6 @@ function createBuyPerClickModal() {
   )
 
   // Form validation
-
   const validation = new JustValidate(modalForm, {
     errorLabelCssClass: 'form__label--error',
     errorFieldCssClass: 'form__input--invalid',
@@ -496,8 +553,8 @@ function createBuyPerClickModal() {
       },
     ])
     .onSuccess(() => {
-      modalForm.reset()
-      validation.refresh()
+      document.body.append(createThanksModal())
+      modal.remove()
     })
 
   modalForm.addEventListener('submit', (e) => {
