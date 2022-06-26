@@ -2,19 +2,19 @@ section.product.container
   .swiper.product__photos.js-product-photos-swiper
     ul.lst.swiper-wrapper
       each number in [1, 2, 3, 4, 5]
-        li.slide.product__photos-slide.swiper-slide
+        li.slide.product__photos-slide.swiper-slide(data-slide=`${number}`)
           picture.slide__img
             source(srcset=`img/product-photo-${number}.webp, img/product-photo-${number}@2x.webp 2x` type='image/webp')
-            source(srcset=`img/product-photo-${number}.jpg, img/product-photo-${number}@2x.jpg 2x`)
-            img(src=`img/product-photo-${number}.jpg` alt=`Фото ${number}`)
+            source(srcset=`img/product-photo-${number}.png, img/product-photo-${number}@2x.png 2x`)
+            img(src=`img/product-photo-${number}.png` alt=`Фото ${number}`)
   .swiper.product__thumbs.js-product-thumbs-swiper
     ul.lst.swiper-wrapper
       each number in [1, 2, 3, 4, 5]
-        li.slide.product__thumbs-slide.swiper-slide
+        li.slide.product__thumbs-slide.swiper-slide(data-slide=`${number}`)
           picture.slide__img
             source(srcset=`img/product-photo-${number}.webp, img/product-photo-${number}@2x.webp 2x` type='image/webp')
-            source(srcset=`img/product-photo-${number}.jpg, img/product-photo-${number}@2x.jpg 2x`)
-            img(src=`img/product-photo-${number}.jpg` alt=`Фото ${number}`)
+            source(srcset=`img/product-photo-${number}.png, img/product-photo-${number}@2x.png 2x`)
+            img(src=`img/product-photo-${number}.png` alt=`Фото ${number}`)
   .product__info
     .rating.product__rating(aria-label='Рейтинг товара')
       img.rating__star(src='star.svg')
@@ -32,14 +32,14 @@ section.product.container
     each number in [1, 2]
       picture.product__scheme
         source(srcset=`img/product-scheme-${number}-1400px.webp, img/product-scheme-${number}-1400px@2x.webp 2x` media='(min-width: 1400px)' type='image/webp')
-        source(srcset=`img/product-scheme-${number}-1400px.jpg, img/product-scheme-${number}-1400px@2x.jpg 2x` media='(min-width: 1400px)')
+        source(srcset=`img/product-scheme-${number}-1400px.png, img/product-scheme-${number}-1400px@2x.png 2x` media='(min-width: 1400px)')
         source(srcset=`img/product-scheme-${number}-1024px.webp, img/product-scheme-${number}-1024px@2x.webp 2x` media='(min-width: 1024px)' type='image/webp')
-        source(srcset=`img/product-scheme-${number}-1024px.jpg, img/product-scheme-${number}-1024px@2x.jpg 2x` media='(min-width: 1024px)')
+        source(srcset=`img/product-scheme-${number}-1024px.png, img/product-scheme-${number}-1024px@2x.png 2x` media='(min-width: 1024px)')
         source(srcset=`img/product-scheme-${number}-768px.webp, img/product-scheme-${number}-768px@2x.webp 2x` media='(min-width: 768px)' type='image/webp')
-        source(srcset=`img/product-scheme-${number}-768px.jpg, img/product-scheme-${number}-768px@2x.jpg 2x` media='(min-width: 768px)')
+        source(srcset=`img/product-scheme-${number}-768px.png, img/product-scheme-${number}-768px@2x.png 2x` media='(min-width: 768px)')
         source(srcset=`img/product-scheme-${number}.webp, img/product-scheme-${number}@2x.webp 2x` type='image/webp')
-        source(srcset=`img/product-scheme-${number}.jpg, img/product-scheme-${number}@2x.jpg 2x`)
-        img(src=`img/product-scheme-${number}-1400px.jpg` alt=`Слайд ${number}`)
+        source(srcset=`img/product-scheme-${number}.png, img/product-scheme-${number}@2x.png 2x`)
+        img(src=`img/product-scheme-${number}-1400px.png` alt=`Слайд ${number}`)
   ul.lst.product__attributes
     each attr in [{ name: 'Гарантия', value: '18 месяцев'}, { name: 'Артикул', value: 'AAA41269004'},{ name: 'Длина', value: '163 см'},{ name: 'Высота', value: '90 см'},{ name: 'Глубина', value: '108 см'},{ name: 'Спальное место', value: '200 см х 125 см'},{ name: 'Высота посадки', value: '45 см'},{ name: 'Механизм', value: 'Опорный'},{ name: 'Тип обивки', value: 'Рогожка'},{ name: 'Цвет', value: 'Синий'},{ name: 'Наполнитель', value: 'Независимый пружинный блок'},{ name: 'Материал каркаса', value: 'Металл. рама с дерев. латами'},{ name: 'Количество мест', value: 'Двухместные'},{ name: 'Категория', value: 'Прямые тканевые диваны'},{ name: 'Возврат', value: 'Условия'},]
       li.attribute.product__attribute
