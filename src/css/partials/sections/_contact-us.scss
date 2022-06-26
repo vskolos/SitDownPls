@@ -66,7 +66,7 @@
       cursor: pointer;
 
       & > path {
-        transition: fill .1s ease-in-out;
+        transition: fill 0.1s ease-in-out;
       }
     }
 
@@ -86,7 +86,7 @@
       background-color: var(--clr-black);
       opacity: 0;
       pointer-events: none;
-      transition: opacity .1s ease-in-out;
+      transition: opacity 0.1s ease-in-out;
 
       &::after {
         content: '';
@@ -132,8 +132,8 @@
       background-color: var(--clr-gray-light);
       border: 1px solid var(--clr-gray-light);
       border-radius: 10px;
-      transition: border-color .1s ease-in-out,
-        background-color .1s ease-in-out;
+      transition: border-color 0.1s ease-in-out,
+        background-color 0.1s ease-in-out;
 
       &:placeholder-shown + .search__icon > path {
         fill: var(--clr-gray);
@@ -172,9 +172,8 @@
       color: var(--clr-white);
       background-color: var(--clr-primary);
       border-radius: 10px;
-      transition: color .1s ease-in-out,
-        background-color .1s ease-in-out,
-        border-color .1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
 
       &:hover {
         background-color: var(--clr-primary-light);
@@ -246,12 +245,10 @@
         height: 14px;
         border-radius: 2px;
         outline-offset: -1px;
-        transition: outline .1s ease-in-out,
-          background-color .1s ease-in-out;
+        transition: outline 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
         & > * {
-          transition: fill .1s ease-in-out,
-            stroke .1s ease-in-out;
+          transition: fill 0.1s ease-in-out, stroke 0.1s ease-in-out;
         }
       }
 
@@ -268,8 +265,7 @@
       &__link {
         color: var(--clr-primary);
         text-decoration: underline;
-        transition: outline .1s ease-in-out,
-          background-color .1s ease-in-out;
+        transition: outline 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
         &:hover {
           color: var(--clr-primary-light);
@@ -319,5 +315,4 @@
       object-fit: contain;
     }
   }
-
 }

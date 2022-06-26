@@ -10,8 +10,7 @@
     &__link {
       grid-column: 1 / 7;
       justify-self: center;
-      transition: outline .1s ease-in-out,
-        background-color .1s ease-in-out;
+      transition: outline 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
       &:focus-visible {
         background-color: var(--clr-pink-violet);
@@ -75,21 +74,21 @@
           right: 0;
           top: 7px;
           pointer-events: none;
-          transition: transform .1s ease-in-out;
+          transition: transform 0.1s ease-in-out;
 
           @media (min-width: 768px) {
             top: 9px;
           }
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
 
         .choices {
           margin-bottom: 0;
-          transition: outline .1s ease-in-out,
-            background-color .1s ease-in-out;
+          transition: outline 0.1s ease-in-out,
+            background-color 0.1s ease-in-out;
 
           &:hover > .choices__inner {
             color: var(--clr-primary-light);
@@ -147,18 +146,19 @@
           color: var(--clr-primary);
           border: none;
           background: none;
-          transition: color .1s ease-in-out;
+          transition: color 0.1s ease-in-out;
         }
 
         .choices__list--single {
           padding: 0;
         }
 
-        .choices[data-type*=select-one]::after {
+        .choices[data-type*='select-one']::after {
           display: none;
         }
 
-        .choices__list--dropdown, .choices__list[aria-expanded] {
+        .choices__list--dropdown,
+        .choices__list[aria-expanded] {
           top: calc(100% + 5px);
           left: 50%;
           transform: translateX(-50%);
@@ -166,7 +166,8 @@
           border: 2px solid var(--clr-gray-light);
         }
 
-        .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+        .choices__list--dropdown .choices__item,
+        .choices__list[aria-expanded] .choices__item {
           padding: 8px 16px;
           font-size: 14px;
           line-height: 1.3;
@@ -179,12 +180,11 @@
         font-size: 14px;
         line-height: 1;
         color: var(--clr-secondary);
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          outline 0.1s ease-in-out;
 
         &__icon > path {
-          transition: fill .1s ease-in-out;
+          transition: fill 0.1s ease-in-out;
         }
 
         &:hover {
@@ -238,9 +238,8 @@
       }
 
       &__link {
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          outline 0.1s ease-in-out;
 
         &:hover {
           color: var(--clr-primary);
@@ -258,7 +257,6 @@
         }
       }
     }
-
   }
 
   .row-2 {
@@ -313,9 +311,8 @@
         font-size: 14px;
         line-height: 1;
         color: var(--clr-gray);
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          outline 0.1s ease-in-out;
 
         &:hover {
           color: var(--clr-primary);
@@ -351,8 +348,7 @@
       }
 
       .user {
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .user__icon > path {
           fill: var(--clr-primary-light);
@@ -376,7 +372,7 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
@@ -384,8 +380,7 @@
       .cart {
         padding-left: 11px;
         position: relative;
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .cart__icon > path {
           fill: var(--clr-primary-light);
@@ -422,12 +417,11 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
     }
-
   }
 
   .row-3 {
@@ -458,8 +452,7 @@
     }
 
     .burger {
-      transition: background-color .1s ease-in-out,
-        outline .1s ease-in-out;
+      transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
       &:hover > .burger__icon > rect {
         fill: var(--clr-primary-light);
@@ -482,9 +475,9 @@
       &__icon {
         display: block;
 
-          & > rect {
-            transition: fill .1s ease-in-out;
-          }
+        & > rect {
+          transition: fill 0.1s ease-in-out;
+        }
       }
 
       &__content {
@@ -510,8 +503,7 @@
 
       &__close {
         margin-left: 16px;
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         @media (min-width: 768px) {
           margin-left: 72px;
@@ -539,7 +531,7 @@
           display: block;
 
           & > rect {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
@@ -577,9 +569,8 @@
           &__link {
             font-size: 16px;
             line-height: 22px;
-            transition: color .1s ease-in-out,
-            background-color .1s ease-in-out,
-            outline .1s ease-in-out;
+            transition: color 0.1s ease-in-out,
+              background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
             &:hover {
               color: var(--clr-primary);
@@ -617,9 +608,8 @@
             font-size: 14px;
             line-height: 1;
             color: var(--clr-gray);
-            transition: color .1s ease-in-out,
-              background-color .1s ease-in-out,
-              outline .1s ease-in-out;
+            transition: color 0.1s ease-in-out,
+              background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
             &:hover {
               color: var(--clr-primary);
@@ -643,8 +633,7 @@
     &__link {
       display: none;
       width: max-content;
-      transition: outline .1s ease-in-out,
-        background-color .1s ease-in-out;
+      transition: outline 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
       &:focus-visible {
         background-color: var(--clr-pink-violet);
@@ -701,9 +690,8 @@
       &__link {
         font-size: 16px;
         line-height: 22px;
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          outline 0.1s ease-in-out;
 
         &:hover {
           color: var(--clr-primary);
@@ -741,8 +729,7 @@
       }
 
       .user {
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .user__icon > path {
           fill: var(--clr-primary-light);
@@ -766,7 +753,7 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
@@ -774,8 +761,7 @@
       .cart {
         padding-left: 11px;
         position: relative;
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .cart__icon > path {
           fill: var(--clr-primary-light);
@@ -812,12 +798,11 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
     }
-
   }
 
   .row-4 {
@@ -857,7 +842,7 @@
         pointer-events: none;
 
         & > path {
-          transition: fill .1s ease-in-out;
+          transition: fill 0.1s ease-in-out;
           fill: var(--clr-primary);
         }
       }
@@ -870,8 +855,8 @@
         background-color: var(--clr-gray-light);
         border-radius: 10px;
         border: 2px solid var(--clr-gray-light);
-        transition: border-color .1s ease-in-out,
-          background-color .1s ease-in-out;
+        transition: border-color 0.1s ease-in-out,
+          background-color 0.1s ease-in-out;
 
         &:placeholder-shown + .search__icon > path {
           fill: var(--clr-gray);
@@ -929,7 +914,7 @@
         }
 
         &:active > .submit__icon > path {
-          stroke: var(--clr-white)
+          stroke: var(--clr-white);
         }
 
         &:active > .submit__icon > circle {
@@ -950,8 +935,7 @@
 
           & > path,
           & > circle {
-            transition: stroke .1s ease-in-out,
-              fill .1s ease-in-out;
+            transition: stroke 0.1s ease-in-out, fill 0.1s ease-in-out;
           }
         }
       }
@@ -986,14 +970,13 @@
         transform: translateY(-50%);
         pointer-events: none;
         z-index: 10;
-        transition: transform .1s ease-in-out;
+        transition: transform 0.1s ease-in-out;
       }
 
       .choices {
         margin-bottom: 0;
-        transition: border-color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          padding-left .1s ease-in-out;
+        transition: border-color 0.1s ease-in-out,
+          background-color 0.1s ease-in-out, padding-left 0.1s ease-in-out;
 
         &:hover > .choices__inner {
           border-color: var(--clr-primary);
@@ -1047,14 +1030,16 @@
         opacity: 1;
       }
 
-      .choices__list--dropdown .choices__list, .choices__list[aria-expanded] .choices__list {
+      .choices__list--dropdown .choices__list,
+      .choices__list[aria-expanded] .choices__list {
         max-height: none;
         display: grid;
         grid-template-columns: repeat(auto-fill, 100px);
-        gap: 9px
+        gap: 9px;
       }
 
-      .choices__list--dropdown, .choices__list[aria-expanded] {
+      .choices__list--dropdown,
+      .choices__list[aria-expanded] {
         padding: 32px 30px 22px;
         top: calc(100% - 10px);
         border: 2px solid var(--clr-gray-light);
@@ -1063,7 +1048,8 @@
         z-index: 1;
       }
 
-      .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+      .choices__list--dropdown .choices__item,
+      .choices__list[aria-expanded] .choices__item {
         padding: 0;
         width: max-content;
         font-size: 16px;
@@ -1074,11 +1060,11 @@
         padding: 0;
       }
 
-      .choices[data-type*=select-one]::after {
+      .choices[data-type*='select-one']::after {
         display: none;
       }
 
-      .choices[data-type*=select-one] .choices__inner {
+      .choices[data-type*='select-one'] .choices__inner {
         padding-bottom: 16.5px;
 
         @media (min-width: 768px) {
@@ -1086,7 +1072,8 @@
         }
       }
 
-      .choices__list--dropdown .choices__item:first-child, .choices__list[aria-expanded] .choices__item:first-child {
+      .choices__list--dropdown .choices__item:first-child,
+      .choices__list[aria-expanded] .choices__item:first-child {
         display: none;
       }
     }
@@ -1108,8 +1095,7 @@
       }
 
       .user {
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .user__icon > path {
           fill: var(--clr-primary-light);
@@ -1133,7 +1119,7 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
@@ -1141,8 +1127,7 @@
       .cart {
         padding-left: 11px;
         position: relative;
-        transition: background-color .1s ease-in-out,
-          outline .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
         &:hover > .cart__icon > path {
           fill: var(--clr-primary-light);
@@ -1179,12 +1164,10 @@
           display: block;
 
           & > path {
-            transition: fill .1s ease-in-out;
+            transition: fill 0.1s ease-in-out;
           }
         }
       }
     }
-
   }
-
 }

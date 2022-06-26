@@ -1,5 +1,4 @@
 .footer {
-
   &__content {
     padding-block: 24px 25px;
     gap: 24px;
@@ -17,8 +16,7 @@
   &__link {
     grid-column: 1 / 7;
     justify-self: center;
-    transition: outline .1s ease-in-out,
-      background-color .1s ease-in-out;
+    transition: outline 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
     &:focus-visible {
       background-color: var(--clr-pink-violet);
@@ -65,8 +63,7 @@
     &__link {
       display: block;
       line-height: 0;
-      transition: background-color .1s ease-in-out,
-        outline .1s ease-in-out;
+      transition: background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
       &:hover > .social__icon > path {
         fill: var(--clr-primary);
@@ -90,7 +87,7 @@
         display: block;
 
         & > path {
-          transition: fill .1s ease-in-out;
+          transition: fill 0.1s ease-in-out;
         }
       }
     }
@@ -140,9 +137,8 @@
           font-size: 14px;
           line-height: 1;
           color: var(--clr-gray);
-          transition: color .1s ease-in-out,
-            background-color .1s ease-in-out,
-            outline .1s ease-in-out;
+          transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+            outline 0.1s ease-in-out;
 
           &:hover {
             color: var(--clr-primary);
@@ -183,5 +179,4 @@
       }
     }
   }
-
 }

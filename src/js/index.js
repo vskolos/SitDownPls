@@ -20,8 +20,12 @@ const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
 const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
 const burgerMenuContent = document.querySelector('.burger__content')
 
-burgerMenuOpenButton.addEventListener('click', () => burgerMenuContent.classList.add('burger__content--opened'))
-burgerMenuCloseButton.addEventListener('click', () => burgerMenuContent.classList.remove('burger__content--opened'))
+burgerMenuOpenButton.addEventListener('click', () =>
+  burgerMenuContent.classList.add('burger__content--opened')
+)
+burgerMenuCloseButton.addEventListener('click', () =>
+  burgerMenuContent.classList.remove('burger__content--opened')
+)
 
 // Sliders
 const heroSlider = new Swiper('.swiper.js-hero-swiper', {
@@ -111,7 +115,6 @@ const ratedProducts = document.querySelectorAll('.rated__product')
 const showMoreRatedProductsBtn = document.querySelector('.rated__btn')
 
 function showRatedProducts() {
-
   ratedProducts.forEach((product, number) => {
     product.remove()
     if (number < ratedProductsVisible + ratedProductsPerPage) {
@@ -119,7 +122,10 @@ function showRatedProducts() {
     }
   })
 
-  ratedProductsVisible = Math.min(ratedProductsVisible + ratedProductsPerPage, ratedProducts.length)
+  ratedProductsVisible = Math.min(
+    ratedProductsVisible + ratedProductsPerPage,
+    ratedProducts.length
+  )
 
   if (ratedProductsVisible === ratedProducts.length) {
     showMoreRatedProductsBtn.remove()
@@ -189,4 +195,4 @@ contactUsForm.addEventListener('submit', (e) => e.preventDefault())
 
 // aria-hidden for all inline svg images
 const svgs = document.querySelectorAll('svg')
-svgs.forEach(svg => svg.ariaHidden = true)
+svgs.forEach((svg) => (svg.ariaHidden = true))

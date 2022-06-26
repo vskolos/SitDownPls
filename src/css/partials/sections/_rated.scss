@@ -145,9 +145,8 @@
       color: var(--clr-primary);
       border: 2px solid var(--clr-primary);
       border-radius: 10px;
-      transition: color .1s ease-in-out,
-        background-color .1s ease-in-out,
-        border-color .1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
 
       @media (min-width: 768px) {
         padding: 17px 33px;
@@ -190,9 +189,8 @@
     color: var(--clr-white);
     background-color: var(--clr-primary);
     border-radius: 10px;
-    transition: color .1s ease-in-out,
-      background-color .1s ease-in-out,
-      border-color .1s ease-in-out;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+      border-color 0.1s ease-in-out;
 
     @media (min-width: 768px) {
       padding-inline: 36.5px;

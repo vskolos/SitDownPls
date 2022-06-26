@@ -140,8 +140,8 @@
           background-color: var(--clr-gray-light);
           border: 2px solid var(--clr-gray-light);
           border-radius: 10px;
-          transition: border-color .1s ease-in-out,
-            background-color .1s ease-in-out;
+          transition: border-color 0.1s ease-in-out,
+            background-color 0.1s ease-in-out;
 
           @media (min-width: 1400px) {
             padding: 0;
@@ -188,7 +188,7 @@
           }
 
           &-icon {
-            transition: transform .1s ease-in-out;
+            transition: transform 0.1s ease-in-out;
 
             @media (min-width: 1400px) {
               display: none;
@@ -261,9 +261,8 @@
             color: var(--clr-gray-shade);
             border: 1px solid var(--clr-gray);
             border-radius: 2px;
-            transition: color .1s ease-in-out,
-              border-color .1s ease-in-out,
-              background-color .1s ease-in-out;
+            transition: color 0.1s ease-in-out, border-color 0.1s ease-in-out,
+              background-color 0.1s ease-in-out;
 
             @media (min-width: 1400px) {
               width: 86px;
@@ -299,7 +298,6 @@
         }
 
         .noUi {
-
           &-target {
             background-color: var(--clr-gray-middle);
             border: none;
@@ -308,7 +306,7 @@
 
           &-connect {
             background-color: var(--clr-primary);
-            transition: background-color .1s ease-in-out;
+            transition: background-color 0.1s ease-in-out;
           }
 
           &-horizontal {
@@ -352,7 +350,7 @@
               border-right: 6.5px solid transparent;
               border-left: 6.5px solid transparent;
               border-radius: 3px;
-              transition: border-color .1s ease-in-out;
+              transition: border-color 0.1s ease-in-out;
             }
 
             &::after {
@@ -403,12 +401,11 @@
               height: 20px;
               border-radius: 2px;
               outline-offset: -1px;
-              transition: outline .1s ease-in-out,
-                background-color .1s ease-in-out;
+              transition: outline 0.1s ease-in-out,
+                background-color 0.1s ease-in-out;
 
               & > * {
-                transition: fill .1s ease-in-out,
-                  stroke .1s ease-in-out;
+                transition: fill 0.1s ease-in-out, stroke 0.1s ease-in-out;
               }
             }
 
@@ -485,8 +482,8 @@
             color: var(--clr-primary);
             text-decoration: underline;
             text-decoration-color: transparent;
-            transition: text-decoration-color .1s ease-in-out,
-              color .1s ease-in-out;
+            transition: text-decoration-color 0.1s ease-in-out,
+              color 0.1s ease-in-out;
           }
 
           &:hover > .card__link-text {
@@ -523,7 +520,7 @@
           }
 
           &:active > .card__link-icon > path {
-            stroke: var(--clr-white)
+            stroke: var(--clr-white);
           }
 
           &:active > .card__link-icon > circle {
@@ -544,8 +541,7 @@
 
             & > path,
             & > circle {
-              transition: stroke .1s ease-in-out,
-                fill .1s ease-in-out;
+              transition: stroke 0.1s ease-in-out, fill 0.1s ease-in-out;
             }
           }
         }
@@ -672,9 +668,8 @@
         color: var(--clr-primary);
         border: 2px solid var(--clr-primary);
         border-radius: 10px;
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          border-color .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          border-color 0.1s ease-in-out;
 
         @media (min-width: 768px) {
           padding: 17px 33px;
@@ -735,9 +730,8 @@
       background-color: var(--clr-white);
       border: 2px solid var(--clr-primary);
       border-radius: 10px;
-      transition: color .1s ease-in-out,
-        background-color .1s ease-in-out,
-        border-color .1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
 
       &:hover {
         color: var(--clr-white);

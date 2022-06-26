@@ -20,18 +20,30 @@ const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
 const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
 const burgerMenuContent = document.querySelector('.burger__content')
 
-burgerMenuOpenButton.addEventListener('click', () => burgerMenuContent.classList.add('burger__content--opened'))
-burgerMenuCloseButton.addEventListener('click', () => burgerMenuContent.classList.remove('burger__content--opened'))
+burgerMenuOpenButton.addEventListener('click', () =>
+  burgerMenuContent.classList.add('burger__content--opened')
+)
+burgerMenuCloseButton.addEventListener('click', () =>
+  burgerMenuContent.classList.remove('burger__content--opened')
+)
 
 // Show/Hide filter params
-const filterCategoryButton = document.querySelector('.js-filter-category-button')
+const filterCategoryButton = document.querySelector(
+  '.js-filter-category-button'
+)
 const filterPriceButton = document.querySelector('.js-filter-price-button')
-const filterDiscountButton = document.querySelector('.js-filter-discount-button')
+const filterDiscountButton = document.querySelector(
+  '.js-filter-discount-button'
+)
 const filterColorButton = document.querySelector('.js-filter-color-button')
 
-const filterCategoryOptions = document.querySelector('.js-filter-category-options')
+const filterCategoryOptions = document.querySelector(
+  '.js-filter-category-options'
+)
 const filterPriceOptions = document.querySelector('.js-filter-price-options')
-const filterDiscountOptions = document.querySelector('.js-filter-discount-options')
+const filterDiscountOptions = document.querySelector(
+  '.js-filter-discount-options'
+)
 const filterColorOptions = document.querySelector('.js-filter-color-options')
 
 function toggleFilterOption(button, option) {
@@ -47,10 +59,18 @@ function toggleFilterOption(button, option) {
   option.classList.toggle('param__options--active')
 }
 
-filterCategoryButton.addEventListener('click', () => toggleFilterOption(filterCategoryButton, filterCategoryOptions))
-filterPriceButton.addEventListener('click', () => toggleFilterOption(filterPriceButton, filterPriceOptions))
-filterDiscountButton.addEventListener('click', () => toggleFilterOption(filterDiscountButton, filterDiscountOptions))
-filterColorButton.addEventListener('click', () => toggleFilterOption(filterColorButton, filterColorOptions))
+filterCategoryButton.addEventListener('click', () =>
+  toggleFilterOption(filterCategoryButton, filterCategoryOptions)
+)
+filterPriceButton.addEventListener('click', () =>
+  toggleFilterOption(filterPriceButton, filterPriceOptions)
+)
+filterDiscountButton.addEventListener('click', () =>
+  toggleFilterOption(filterDiscountButton, filterDiscountOptions)
+)
+filterColorButton.addEventListener('click', () =>
+  toggleFilterOption(filterColorButton, filterColorOptions)
+)
 
 // Filter price slider
 const filterPriceFromInput = document.querySelector('.js-filter-price-from')
@@ -61,14 +81,14 @@ noUiSlider.create(filterPriceSlider, {
   start: [10000, 100000],
   connect: true,
   range: {
-    'min': 0,
-    'max': 150000,
+    min: 0,
+    max: 150000,
   },
   step: 1,
   format: wNumb({
     decimals: 0,
     thousand: ' ',
-})
+  }),
 })
 
 filterPriceSlider.noUiSlider.on('update', function (values, handle) {
@@ -79,22 +99,25 @@ filterPriceSlider.noUiSlider.on('update', function (values, handle) {
   } else {
     filterPriceFromInput.value = value
   }
-});
+})
 
-filterPriceFromInput.addEventListener('change', () => filterPriceSlider.noUiSlider.set([filterPriceFromInput.value, null]))
-filterPriceToInput.addEventListener('change', () => filterPriceSlider.noUiSlider.set([null, filterPriceToInput.value]))
-
+filterPriceFromInput.addEventListener('change', () =>
+  filterPriceSlider.noUiSlider.set([filterPriceFromInput.value, null])
+)
+filterPriceToInput.addEventListener('change', () =>
+  filterPriceSlider.noUiSlider.set([null, filterPriceToInput.value])
+)
 
 // Remove filter parameter buttons from tabindex
 function setParamButtonsAriaHidden() {
   const paramButtons = document.querySelectorAll('.param__btn')
   if (window.innerWidth >= 1400) {
-    paramButtons.forEach(button => {
+    paramButtons.forEach((button) => {
       button.ariaDisabled = true
       button.setAttribute('tabindex', '-1')
     })
   } else {
-    paramButtons.forEach(button => {
+    paramButtons.forEach((button) => {
       button.ariaDisabled = false
       button.removeAttribute('tabindex')
     })
@@ -111,32 +134,30 @@ let currentPage = 1
 let lastPage = Math.floor(products.length / productsPerPage)
 
 function showProducts() {
-
   products.forEach((product, number) => {
     product.remove()
 
-    if (number >= productsPerPage * (currentPage - 1) && number < productsPerPage * currentPage) {
+    if (
+      number >= productsPerPage * (currentPage - 1) &&
+      number < productsPerPage * currentPage
+    ) {
       productsList.append(product)
     }
   })
-
 }
 
 function createPagination(count) {
-
   const list = document.createElement('ul')
   list.classList.add('lst', 'pagination', 'catalog__pagination')
 
   for (let i = 0; i < count; i++) {
-
     const item = document.createElement('li')
     item.classList.add('pagination__item')
 
     const button = document.createElement('button')
     button.classList.add('btn', 'pagination__btn')
     button.ariaLabel = `Страница ${i + 1}`
-    if (i === 0)
-      button.classList.add('pagination__btn--active')
+    if (i === 0) button.classList.add('pagination__btn--active')
     button.textContent = i + 1
 
     button.addEventListener('click', () => {
@@ -158,8 +179,7 @@ function createPagination(count) {
   return list
 }
 
-if (lastPage > 1)
-  catalogSection.append(createPagination(lastPage))
+if (lastPage > 1) catalogSection.append(createPagination(lastPage))
 
 showProducts()
 setParamButtonsAriaHidden()
@@ -168,7 +188,6 @@ let currentWindowWidth = window.innerWidth
 
 function resizeHandler() {
   if (window.innerWidth !== currentWindowWidth) {
-
     currentWindowWidth = window.innerWidth
     productsPerPage = window.innerWidth >= 1024 ? 9 : 6
 
@@ -193,4 +212,4 @@ window.addEventListener('resize', () => {
 
 // aria-hidden for all inline svg images
 const svgs = document.querySelectorAll('svg')
-svgs.forEach(svg => svg.ariaHidden = true)
+svgs.forEach((svg) => (svg.ariaHidden = true))

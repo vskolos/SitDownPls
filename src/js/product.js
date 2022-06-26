@@ -20,8 +20,12 @@ const burgerMenuOpenButton = document.querySelector('.js-burger-menu-open')
 const burgerMenuCloseButton = document.querySelector('.js-burger-menu-close')
 const burgerMenuContent = document.querySelector('.burger__content')
 
-burgerMenuOpenButton.addEventListener('click', () => burgerMenuContent.classList.add('burger__content--opened'))
-burgerMenuCloseButton.addEventListener('click', () => burgerMenuContent.classList.remove('burger__content--opened'))
+burgerMenuOpenButton.addEventListener('click', () =>
+  burgerMenuContent.classList.add('burger__content--opened')
+)
+burgerMenuCloseButton.addEventListener('click', () =>
+  burgerMenuContent.classList.remove('burger__content--opened')
+)
 
 // Product photos slider
 const thumbsSlider = new Swiper('.swiper.js-product-thumbs-swiper', {
@@ -99,4 +103,4 @@ const alikeSlider = new Swiper('.swiper.js-alike-swiper', {
 
 // aria-hidden for all inline svg images
 const svgs = document.querySelectorAll('svg')
-svgs.forEach(svg => svg.ariaHidden = true)
+svgs.forEach((svg) => (svg.ariaHidden = true))

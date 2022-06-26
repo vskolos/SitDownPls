@@ -111,7 +111,7 @@
       }
 
       &:active > svg > path {
-        stroke: var(--clr-white)
+        stroke: var(--clr-white);
       }
 
       &:active > svg > circle {
@@ -124,8 +124,7 @@
 
         & > path,
         & > circle {
-          transition: stroke .1s ease-in-out,
-            fill .1s ease-in-out;
+          transition: stroke 0.1s ease-in-out, fill 0.1s ease-in-out;
         }
       }
     }
@@ -242,9 +241,8 @@
       color: var(--clr-primary);
       border: 2px solid var(--clr-primary);
       border-radius: 10px;
-      transition: color .1s ease-in-out,
-        background-color .1s ease-in-out,
-        border-color .1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
 
       @media (min-width: 768px) {
         padding: 17px 33px;

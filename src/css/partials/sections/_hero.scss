@@ -82,9 +82,8 @@
         background-color: var(--clr-primary);
         border: 2px solid var(--clr-primary);
         border-radius: 10px;
-        transition: color .1s ease-in-out,
-          background-color .1s ease-in-out,
-          border-color .1s ease-in-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          border-color 0.1s ease-in-out;
 
         &:hover {
           background-color: var(--clr-primary-light);
@@ -127,7 +126,9 @@
       }
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+      .swiper-pagination-bullet {
       @media (min-width: 768px) {
         margin-inline: 8px;
       }
@@ -137,7 +138,7 @@
       width: 6px;
       height: 6px;
       background-color: #333333;
-      opacity: .3;
+      opacity: 0.3;
 
       @media (min-width: 768px) {
         width: 14px;

@@ -79,7 +79,7 @@
     }
   }
 
-  .swiper-vertical>.swiper-wrapper {
+  .swiper-vertical > .swiper-wrapper {
     align-items: center;
   }
 
@@ -176,7 +176,6 @@
   }
 
   &__btn {
-
     &-buy-1-click {
       margin-bottom: 12px;
       padding: 17px;
@@ -187,9 +186,8 @@
       background-color: var(--clr-primary);
       border: 2px solid var(--clr-primary);
       border-radius: 10px;
-      transition: color .1s ease-in-out,
-        background-color .1s ease-in-out,
-        border-color .1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
 
       @media (min-width: 768px) {
         padding: 17px 33px;
@@ -225,8 +223,7 @@
       color: var(--clr-primary);
       text-decoration: underline;
       text-decoration-color: transparent;
-      transition: text-decoration-color .1s ease-in-out,
-        color .1s ease-in-out;
+      transition: text-decoration-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
       @media (min-width: 768px) {
         padding-inline: 30px;
