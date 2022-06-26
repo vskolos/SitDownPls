@@ -37,8 +37,12 @@ function fonts() {
   return src('src/fonts/**').pipe(dest('dist/fonts'))
 }
 
-function vendor() {
-  return src('src/vendor/**').pipe(dest('dist'))
+function vendorCSS() {
+  return src('src/vendor/**/*.css').pipe(dest('dist/css'))
+}
+
+function vendorJS() {
+  return src('src/vendor/**/*.js').pipe(dest('dist/js'))
 }
 
 function imgCopyResized() {
@@ -82,7 +86,7 @@ function scss() {
       })
     )
     .pipe(gulpif(!isProduction, sourcemaps.write()))
-    .pipe(dest('dist'))
+    .pipe(dest('dist/css'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
@@ -95,7 +99,7 @@ function js() {
       })
     )
     .pipe(gulpif(!isProduction, sourcemaps.write()))
-    .pipe(dest('dist'))
+    .pipe(dest('dist/js'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
@@ -103,8 +107,8 @@ function favicons(done) {
   realFavicon.generateFavicon(
     {
       masterPicture: 'src/img/favicon.svg',
-      dest: 'dist',
-      iconsPath: '/',
+      dest: 'dist/favicons',
+      iconsPath: '/favicons/',
       design: {
         ios: {
           pictureAspect: 'backgroundAndMargin',
@@ -193,9 +197,11 @@ function watchFiles() {
   )
 }
 
+const vendor = series(vendorCSS, vendorJS)
+watch('src/vendor/**', vendor)
+
 watch(['src/**/*.pug', 'src/img/inline/*.svg'], html)
 watch('src/fonts/**', fonts)
-watch('src/vendor/**', vendor)
 watch('src/js/**/*.js', js)
 watch('src/css/**/*.scss', scss)
 
