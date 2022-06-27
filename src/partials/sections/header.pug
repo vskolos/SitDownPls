@@ -39,7 +39,7 @@ header.header
         ul.lst.menu-1.burger__menu-1
           each text in ['Каталог', 'Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
             li.menu-1__item
-              a.lnk.menu-1__link(href='#')= text
+              a.lnk.menu-1__link(href=`${text === 'Каталог' ? 'catalog.html' : '#'}`)= text
         ul.lst.menu-2.burger__menu-2
           each text in ['О компании', 'Гарантии и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
             li.menu-2__item
@@ -50,7 +50,7 @@ header.header
       ul.lst.menu__list
         each text in ['Каталог', 'Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
           li.menu__item
-            a.lnk.menu__link(href='#')= text
+            a.lnk.menu__link(href=`${text === 'Каталог' ? 'catalog.html' : '#'}`)= text
     .btns.row-3__btns
       button.btn.user.btns__user(aria-label='Личный кабинет')
         img.user__icon(src='user.svg')

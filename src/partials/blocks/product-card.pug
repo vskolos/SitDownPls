@@ -10,4 +10,4 @@ article(class=`card ${className ? className : ''}`)
     img(src=`img/${productImg}-large.png` alt='')
   h4.card__title= productName
   span.card__price= productPrice
-  button.btn.card__btn Купить
+  a.lnk.card__link(href='product.html') Купить

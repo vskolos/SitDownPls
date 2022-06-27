@@ -65,11 +65,12 @@
     }
   }
 
-  &__btn {
+  &__link {
     padding: 22px;
     position: absolute;
     inset: auto 12px -91px;
     width: calc(100% - 24px);
+    text-align: center;
     font-weight: 700;
     font-size: 16px;
     line-height: 1;

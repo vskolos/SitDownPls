@@ -1,5 +1,5 @@
 .breadcrumbs.container
   ul.lst.breadcrumbs__list
-    each text, index in breadcrumbLinks
+    each data, index in breadcrumbLinks
       li.breadcrumbs__item
-        a(class=`lnk breadcrumbs__link${index === breadcrumbLinks.length - 1 ? ' breadcrumbs__link--current' : ''}` href='#')= text
+        a(class=`lnk breadcrumbs__link${index === breadcrumbLinks.length - 1 ? ' breadcrumbs__link--current' : ''}` href=`${data.link}`)= data.anchor

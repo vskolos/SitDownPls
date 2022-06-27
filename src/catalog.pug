@@ -6,7 +6,7 @@ html(lang='ru')
   include partials/head
   body
     - var logoLink = '/'
-    - var breadcrumbLinks = ['Главная', 'Каталог', 'Диваны', 'Прямые диваны']
+    - var breadcrumbLinks = [{ anchor: 'Главная', link: 'index.html' }, { anchor: 'Каталог', link: 'catalog.html' }, { anchor: 'Диваны', link: 'catalog.html' }, { anchor: 'Прямые диваны', link: 'catalog.html' }]
     include partials/sections/header
     main
       include partials/sections/breadcrumbs

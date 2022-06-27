@@ -15,5 +15,5 @@ section.hero
             source(srcset=`img/slide-${number}.jpg, img/slide-${number}@2x.jpg 2x`)
             img(src=`img/slide-${number}-1400px.jpg` alt=`Слайд ${number}`)
           h5(class=`slide__title${data.white ? ' slide__title--white' : ''}`)= data.title
-          button.btn.slide__btn= data.button
+          a.lnk.slide__link(href='catalog.html')= data.button
     .swiper-pagination
