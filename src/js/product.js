@@ -439,8 +439,8 @@ function createBuyPerClickModal() {
   formTelInput.id = 'form-tel'
   formTelInput.classList.add('form__input')
   formTelInput.type = 'tel'
-  formTelInput.placeholder = 'Как вас зовут?'
-  formTelInput.ariaLabel = 'Введите ваше имя'
+  formTelInput.placeholder = 'Ваш телефон'
+  formTelInput.ariaLabel = 'Введите ваш телефон'
 
   formTelLabel.append(formTelInput)
 
